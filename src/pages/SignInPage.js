@@ -1,3 +1,10 @@
-const SignInPage = () => <h1>Sign in page</h1>
+import { SignInForm } from '../components/auth'
+
+const SignInPage = () => (
+  <>
+    <h1>Sign in</h1>
+    <SignInForm />
+  </>
+)
 
 export default SignInPage
