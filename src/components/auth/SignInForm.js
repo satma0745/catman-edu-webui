@@ -2,7 +2,7 @@ import { Formik, Form } from 'formik'
 import { object, string } from 'yup'
 
 import Button from 'react-bootstrap/Button'
-import Input from '../common/controls/Input'
+import { Input, PasswordInput } from '../common/controls'
 
 const initial = { username: '', password: '' }
 
@@ -15,7 +15,7 @@ const SignInForm = ({ onSignIn }) => (
   <Formik initialValues={initial} validationSchema={schema} onSubmit={onSignIn}>
     <Form>
       <Input label="Username" name="username" />
-      <Input label="Password" name="password" type="password" />
+      <PasswordInput label="Password" name="password" />
 
       <Button type="submit">Sign in</Button>
     </Form>
