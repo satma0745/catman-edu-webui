@@ -4,7 +4,7 @@ import { useField } from 'formik'
 import { useId } from 'react-id-generator'
 import Form from 'react-bootstrap/Form'
 
-const PasswordInput = ({ label, ...props }) => {
+const PasswordInput = ({ className, label, ...props }) => {
   const [field, meta] = useField(props)
 
   const [checkboxId] = useId()
@@ -13,7 +13,7 @@ const PasswordInput = ({ label, ...props }) => {
   const toggleShow = () => setShow(!show)
 
   return (
-    <Form.Group>
+    <Form.Group className={className}>
       <Form.Label>{label}</Form.Label>
       <Form.Control
         {...field}

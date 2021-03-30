@@ -12,7 +12,7 @@ const App = () => (
     <Header />
 
     <Container className="flex-grow-1 bg-white shadow-sm border-left border-right">
-      <Row className="py-5 px-3">
+      <Row className="py-5 px-3 h-100">
         <Col>
           <Switch>
             <Route path="/home" render={(props) => <HomePage {...props} />} />

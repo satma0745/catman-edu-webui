@@ -1,11 +1,11 @@
 import { useField } from 'formik'
 import Form from 'react-bootstrap/Form'
 
-const Input = ({ label, ...props }) => {
+const Input = ({ className, label, ...props }) => {
   const [field, meta] = useField(props)
 
   return (
-    <Form.Group>
+    <Form.Group className={className}>
       <Form.Label>{label}</Form.Label>
       <Form.Control
         {...field}
