@@ -2,7 +2,7 @@ import { SignInForm } from '../components/auth'
 
 const SignInPage = () => (
   <>
-    <h1>Sign in</h1>
+    <h1>Войти</h1>
     <SignInForm />
   </>
 )

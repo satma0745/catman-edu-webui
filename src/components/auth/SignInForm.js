@@ -7,17 +7,17 @@ import { Input, PasswordInput } from '../common/controls'
 const initial = { username: '', password: '' }
 
 const schema = object().shape({
-  username: string().required('Username required'),
-  password: string().required('Password required'),
+  username: string().required('Введите логин'),
+  password: string().required('Введите пароль'),
 })
 
 const SignInForm = ({ onSignIn }) => (
   <Formik initialValues={initial} validationSchema={schema} onSubmit={onSignIn}>
     <Form>
-      <Input label="Username" name="username" />
-      <PasswordInput label="Password" name="password" />
+      <Input label="Логин" name="username" />
+      <PasswordInput label="Пароль" name="password" />
 
-      <Button type="submit">Sign in</Button>
+      <Button type="submit">Войти</Button>
     </Form>
   </Formik>
 )

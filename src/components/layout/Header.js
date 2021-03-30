@@ -10,10 +10,10 @@ const Header = () => (
     </Navbar.Brand>
     <Nav className="mr-auto">
       <Nav.Link as={Link} to="/home">
-        Home
+        Главная
       </Nav.Link>
       <Nav.Link as={Link} to="/">
-        Sign in
+        Войти
       </Nav.Link>
     </Nav>
   </Navbar>

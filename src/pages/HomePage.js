@@ -1,3 +1,3 @@
-const HomePage = () => <h1>Home page</h1>
+const HomePage = () => <h1>Главная страница</h1>
 
 export default HomePage

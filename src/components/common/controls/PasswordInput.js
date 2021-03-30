@@ -27,7 +27,7 @@ const PasswordInput = ({ label, ...props }) => {
       <Form.Check
         id={checkboxId}
         type="checkbox"
-        label="Show password"
+        label="Показать пароль"
         custom
         onChange={toggleShow}
       />
