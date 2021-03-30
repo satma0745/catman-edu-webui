@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
 const Header = () => (
-  <Navbar className="shadow-sm border-bottom" bg="light">
+  <Navbar sticky="top" className="shadow-sm border-bottom" bg="light">
     <Navbar.Brand as={Link} to="/home">
       Catman.Education
     </Navbar.Brand>

@@ -1,6 +1,6 @@
 {
   "name": "catman-edu-webui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "bootstrap": "^4.6.0",
     "react": "^17.0.2",
