@@ -15,8 +15,8 @@ const App = () => (
       <Row className="py-5 px-3">
         <Col>
           <Switch>
-            <Route path="/home" render={HomePage} />
-            <Route path="/" render={SignInPage} />
+            <Route path="/home" render={(props) => <HomePage {...props} />} />
+            <Route path="/" render={(props) => <SignInPage {...props} />} />
           </Switch>
         </Col>
       </Row>
