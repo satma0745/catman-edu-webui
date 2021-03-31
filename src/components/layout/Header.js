@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
@@ -7,10 +8,24 @@ import Button from 'react-bootstrap/Button'
 import { useAuth } from '../../auth'
 
 const Auth = () => {
-  const [user] = useAuth()
+  const [userInfo, setUserInfo] = useAuth()
+  const history = useHistory()
 
-  if (user) {
-    return <Navbar.Text>{user.username}</Navbar.Text>
+  if (userInfo) {
+    return (
+      <Form inline>
+        <span className="mr-3">{userInfo.username}</span>
+        <Button
+          variant="outline-primary"
+          onClick={() => {
+            setUserInfo(undefined)
+            history.push('/')
+          }}
+        >
+          Выйти
+        </Button>
+      </Form>
+    )
   }
 
   return (
