@@ -11,10 +11,10 @@ const schema = object().shape({
   password: string().required('Введите пароль'),
 })
 
-const SignInForm = ({ className, onSignIn }) => (
+const SignInForm = ({ className, onSubmit }) => (
   <div className={className}>
     <h1 className="mb-5">Войти</h1>
-    <Formik initialValues={initial} validationSchema={schema} onSubmit={onSignIn}>
+    <Formik initialValues={initial} validationSchema={schema} onSubmit={onSubmit}>
       <Form>
         <Input className="my-4" label="Логин" name="username" />
         <PasswordInput className="my-4" label="Пароль" name="password" />
