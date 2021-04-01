@@ -1,3 +1,4 @@
+import DisciplinesFilter from './DisciplinesFilter'
 import DisciplinesTable from './DisciplinesTable'
 
-export { DisciplinesTable }
+export { DisciplinesFilter, DisciplinesTable }
