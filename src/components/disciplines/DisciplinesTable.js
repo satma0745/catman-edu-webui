@@ -1,7 +1,8 @@
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 import Table from 'react-bootstrap/Table'
 
-const DisciplinesTable = ({ disciplines = [], onDelete }) => (
+const DisciplinesTable = ({ disciplines = [], onEdit, onDelete }) => (
   <Table striped bordered hover>
     <thead>
       <tr>
@@ -16,9 +17,14 @@ const DisciplinesTable = ({ disciplines = [], onDelete }) => (
           <td>{title}</td>
           <td>{grade}</td>
           <td>
-            <Button variant="outline-danger" onClick={() => onDelete(id)}>
-              Удалить
-            </Button>
+            <Form inline className="justify-content-around">
+              <Button variant="outline-primary" onClick={() => onEdit(id)}>
+                Изменить
+              </Button>
+              <Button variant="outline-danger" onClick={() => onDelete(id)}>
+                Удалить
+              </Button>
+            </Form>
           </td>
         </tr>
       ))}

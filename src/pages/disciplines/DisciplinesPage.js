@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
-import { DisciplinesFilter, DisciplinesTable } from '../components/disciplines'
-import { deleteDiscipline, getFilteredDisciplines } from '../api'
+import { DisciplinesFilter, DisciplinesTable } from '../../components/disciplines'
+import { deleteDiscipline, getFilteredDisciplines } from '../../api'
 
 const DisciplinesPage = () => {
+  const history = useHistory()
+
   const [disciplines, setDisciplines] = useState()
   const [filter, setFilter] = useState({})
 
@@ -29,7 +32,15 @@ const DisciplinesPage = () => {
     <>
       <h1>Страница управления дисциплинами</h1>
       <DisciplinesFilter onApply={(options) => setFilter(options)} />
-      {disciplines && <DisciplinesTable disciplines={disciplines} onDelete={onDelete} />}
+      {disciplines && (
+        <DisciplinesTable
+          disciplines={disciplines}
+          onEdit={(id) => {
+            history.push(`/disciplines/edit/${id}`)
+          }}
+          onDelete={onDelete}
+        />
+      )}
     </>
   )
 }

@@ -1,4 +1,5 @@
 import DisciplinesFilter from './DisciplinesFilter'
 import DisciplinesTable from './DisciplinesTable'
+import EditDisciplineForm from './EditDisciplineForm'
 
-export { DisciplinesFilter, DisciplinesTable }
+export { DisciplinesFilter, DisciplinesTable, EditDisciplineForm }

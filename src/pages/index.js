@@ -1,5 +1,5 @@
 import AdminsPage from './AdminsPage'
-import DisciplinesPage from './DisciplinesPage'
+import { DisciplinesPage, EditDisciplinePage } from './disciplines'
 import GroupsPage from './GroupsPage'
 import HomePage from './HomePage'
 import NotFoundPage from './NotFoundPage'
@@ -12,6 +12,7 @@ import TestsPage from './TestsPage'
 export {
   AdminsPage,
   DisciplinesPage,
+  EditDisciplinePage,
   GroupsPage,
   HomePage,
   NotFoundPage,
