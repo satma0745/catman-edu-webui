@@ -10,7 +10,8 @@ const Dropdown = ({ title: defaultTitle, items = [], onSelect: notifyOnSelect, .
     const text = event.target.innerText
     setTitle(text)
 
-    notifyOnSelect(key)
+    const index = Number.parseInt(key, 10)
+    notifyOnSelect(index)
   }
 
   return (
