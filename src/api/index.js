@@ -1,5 +1,5 @@
 import { configureAxios } from './common'
 import { signIn } from './auth'
-import { getFiltered as getFilteredDisciplines } from './disciplines'
+import { deleteDiscipline, getFiltered as getFilteredDisciplines } from './disciplines'
 
-export { configureAxios, signIn, getFilteredDisciplines }
+export { configureAxios, signIn, deleteDiscipline, getFilteredDisciplines }
