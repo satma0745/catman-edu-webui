@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 
+import Form from 'react-bootstrap/Form'
 import { Dropdown } from '../components/common/controls'
 
 import { DisciplinesTable } from '../components/disciplines'
@@ -46,7 +47,17 @@ const DisciplinesPage = () => {
           setFilter({ ...filter, grade: grade || undefined })
         }}
       />
-      {!!disciplines?.length && <DisciplinesTable disciplines={disciplines} />}
+      <Form.Group>
+        <Form.Label>Название дисциплины:</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Название дисциплины"
+          onChange={(event) => {
+            setFilter({ ...filter, title: event.target.value })
+          }}
+        />
+      </Form.Group>
+      {disciplines && <DisciplinesTable disciplines={disciplines} />}
     </>
   )
 }
