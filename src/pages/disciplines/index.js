@@ -1,4 +1,5 @@
+import AddDisciplinePage from './AddDisciplinePage'
 import DisciplinesPage from './DisciplinesPage'
 import EditDisciplinePage from './EditDisciplinePage'
 
-export { DisciplinesPage, EditDisciplinePage }
+export { AddDisciplinePage, DisciplinesPage, EditDisciplinePage }

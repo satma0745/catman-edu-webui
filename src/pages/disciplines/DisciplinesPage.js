@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
+import Button from 'react-bootstrap/Button'
+
 import { DisciplinesFilter, DisciplinesTable } from '../../components/disciplines'
 import { deleteDiscipline, getFilteredDisciplines } from '../../api'
 
@@ -41,6 +43,10 @@ const DisciplinesPage = () => {
           onDelete={onDelete}
         />
       )}
+
+      <div className="d-flex justify-content-center">
+        <Button onClick={() => history.push('/disciplines/add')}>Добавить дисциплину</Button>
+      </div>
     </>
   )
 }
