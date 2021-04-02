@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import { BrowserRouter } from 'react-router-dom'
+
+import { QueryClient, QueryClientProvider } from 'react-query'
 import { configureAxios } from './api'
 
 import { AuthProvider, loadUserInfo } from './auth'
@@ -17,9 +19,11 @@ loadUserInfo()
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <App />
-      </AuthProvider>
+      <QueryClientProvider client={new QueryClient()}>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
+      </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
