@@ -1,3 +1,4 @@
+import NotFoundError from './NotFoundError'
 import ValidationError from './ValidationError'
 
-export { ValidationError }
+export { NotFoundError, ValidationError }

@@ -1,4 +1,4 @@
-import { ValidationError } from './errors'
+import { NotFoundError, ValidationError } from './errors'
 import configureAxios from './configureAxios'
 
-export { ValidationError, configureAxios }
+export { NotFoundError, ValidationError, configureAxios }

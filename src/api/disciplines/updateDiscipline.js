@@ -1,25 +1,25 @@
 import axios from 'axios'
 import { getUserInfo } from '../../auth'
 
-const updateDiscipline = async (id, discipline = {}) => {
+import { NotFoundError, ValidationError } from '../common'
+
+const updateDiscipline = async (id, discipline) => {
   try {
     const token = getUserInfo()?.token
-    await axios.put(`/disciplines/${id}`, discipline, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    const auth = `Bearer ${token}`
 
-    return { success: true }
+    return await axios.put(`/disciplines/${id}`, discipline, { headers: { Authorization: auth } })
   } catch (error) {
-    if (error?.response?.status === 404) {
-      return { success: false, notFound: true }
+    if (error.response?.status === 404) {
+      throw new NotFoundError()
     }
 
-    if (error?.response?.data?.validationErrors) {
-      const { Title: title, Grade: grade } = error?.response?.data?.validationErrors
-      return { success: false, validation: { title, grade } }
+    if (error.response?.data?.validationErrors) {
+      const { Title, Grade } = error.response?.data?.validationErrors
+      throw new ValidationError({ title: Title, grade: Grade })
     }
 
-    return { success: false, error }
+    throw error
   }
 }
 

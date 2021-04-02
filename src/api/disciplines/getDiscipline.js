@@ -1,16 +1,22 @@
 import axios from 'axios'
+import { NotFoundError } from '../common'
 
-const getFiltered = async (id) => {
+const getDiscipline = async (id) => {
   try {
     const response = await axios.get(`/disciplines/${id}`)
-    return { success: true, discipline: response.data.resource }
+    return response.data.resource
   } catch (error) {
     if (error?.response?.status === 404) {
-      return { success: false, notFound: true }
+      throw new NotFoundError()
     }
 
-    return { success: false, error }
+    throw error
   }
 }
 
-export default getFiltered
+const queryWrapper = ({ queryKey }) => {
+  const [_, id] = queryKey
+  return getDiscipline(id)
+}
+
+export default queryWrapper
