@@ -1,4 +1,4 @@
-import { configureAxios } from './common'
+import { ValidationError, configureAxios } from './common'
 import { signIn } from './auth'
 import {
   addDiscipline,
@@ -9,6 +9,7 @@ import {
 } from './disciplines'
 
 export {
+  ValidationError,
   configureAxios,
   signIn,
   addDiscipline,

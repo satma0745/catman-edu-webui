@@ -1,22 +1,22 @@
 import axios from 'axios'
 import { getUserInfo } from '../../auth'
 
-const updateDiscipline = async (discipline = {}) => {
+import { ValidationError } from '../common'
+
+const addDiscipline = async ({ title, grade }) => {
   try {
     const token = getUserInfo()?.token
-    await axios.post('/disciplines', discipline, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
+    const auth = `Bearer ${token}`
 
-    return { success: true }
+    return await axios.post('/disciplines', { title, grade }, { headers: { Authorization: auth } })
   } catch (error) {
-    if (error?.response?.data?.validationErrors) {
-      const { Title: title, Grade: grade } = error?.response?.data?.validationErrors
-      return { success: false, validation: { title, grade } }
+    if (error.response?.data?.validationErrors) {
+      const { Title, Grade } = error.response?.data?.validationErrors
+      throw new ValidationError({ title: Title, grade: Grade })
     }
 
-    return { success: false, error }
+    throw error
   }
 }
 
-export default updateDiscipline
+export default addDiscipline
