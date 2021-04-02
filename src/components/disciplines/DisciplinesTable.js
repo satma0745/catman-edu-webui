@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Table from 'react-bootstrap/Table'
 
 const DisciplinesTable = ({ disciplines = [], onEdit, onDelete }) => (
-  <Table striped bordered hover>
+  <Table className="mb-0" striped bordered hover>
     <thead>
       <tr>
         <th>Название</th>

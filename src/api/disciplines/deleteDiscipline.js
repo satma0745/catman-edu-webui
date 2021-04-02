@@ -1,15 +1,9 @@
 import axios from 'axios'
 import { getUserInfo } from '../../auth'
 
-const deleteDiscipline = async (id) => {
-  try {
-    const token = getUserInfo()?.token
-    await axios.delete(`/disciplines/${id}`, { headers: { Authorization: `Bearer ${token}` } })
-
-    return { success: true }
-  } catch (error) {
-    return { success: false, error }
-  }
+const deleteDiscipline = (id) => {
+  const token = getUserInfo()?.token
+  return axios.delete(`/disciplines/${id}`, { headers: { Authorization: `Bearer ${token}` } })
 }
 
 export default deleteDiscipline

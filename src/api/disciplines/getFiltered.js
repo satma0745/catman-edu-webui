@@ -1,12 +1,13 @@
 import axios from 'axios'
 
 const getFiltered = async ({ title, grade } = {}) => {
-  try {
-    const response = await axios.get('/disciplines', { params: { title, grade } })
-    return { success: true, disciplines: response.data.resource }
-  } catch (error) {
-    return { success: false, error }
-  }
+  const response = await axios.get('/disciplines', { params: { title, grade } })
+  return response.data.resource
 }
 
-export default getFiltered
+const queryWrapper = ({ queryKey }) => {
+  const [_, filter] = queryKey
+  return getFiltered(filter)
+}
+
+export default queryWrapper
