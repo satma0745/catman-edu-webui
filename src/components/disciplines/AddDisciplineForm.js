@@ -1,21 +1,16 @@
 import { Formik, Form } from 'formik'
-import { object, string, number } from 'yup'
+import { object } from 'yup'
 
 import Button from 'react-bootstrap/Button'
 import { Input } from '../common/controls'
 
+import { grade, title } from '../../validation/discipline'
+
 const initialValues = { title: '', grade: '' }
 
 const schema = object().shape({
-  title: string()
-    .required('Введите название дисциплины')
-    .max(30, 'Название дисциплины должно быть не длиннее 30 симоволов'),
-  grade: number()
-    .typeError('Номер класса должен быть числом')
-    .required('Укажите номер класса')
-    .integer('Номер класса должен быть целым числом')
-    .min(1, 'Номер класса не может быть меньше 1')
-    .max(11, 'Номер класса не может быть больше 11'),
+  title: title().required('Введите название дисциплины'),
+  grade: grade().required('Укажите номер класса'),
 })
 
 const AddDisciplineForm = ({ className, onCancel, onSubmit }) => (
