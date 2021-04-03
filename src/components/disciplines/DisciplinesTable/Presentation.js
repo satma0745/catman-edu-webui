@@ -24,8 +24,8 @@ const Presentation = ({
       <tbody>
         {disciplines.map(({ id, title, grade }) => (
           <tr key={id}>
-            <td>{title}</td>
-            <td>{grade}</td>
+            <td className="align-middle">{title}</td>
+            <td className="align-middle">{grade}</td>
             <td>
               <Form inline className="justify-content-around">
                 <Button variant="outline-primary" onClick={() => edit(id)}>
