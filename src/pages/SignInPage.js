@@ -1,3 +1,4 @@
+import { useMutation } from 'react-query'
 import { useHistory } from 'react-router-dom'
 
 import Jumbotron from 'react-bootstrap/Jumbotron'
@@ -12,18 +13,19 @@ const SignInPage = () => {
   const [_, setUserInfo] = useAuth()
   const history = useHistory()
 
-  const onSubmit = async (credentials, { setErrors }) => {
-    const { success, userInfo, validation } = await signIn(credentials)
-
-    if (success) {
+  const { mutate: sign } = useMutation(signIn, {
+    onSuccess: (userInfo) => {
       setUserInfo(userInfo)
       history.push('/home')
-      return
-    }
+    },
+  })
 
-    if (validation) {
-      setErrors(validation)
-    }
+  const onSubmit = (credentials, { setErrors }) => {
+    sign(credentials, {
+      onError: ({ validation }) => {
+        if (validation) setErrors(validation)
+      },
+    })
   }
 
   return (
