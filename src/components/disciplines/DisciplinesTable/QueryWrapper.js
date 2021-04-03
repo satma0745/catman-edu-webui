@@ -1,28 +1,18 @@
 import { useHistory } from 'react-router-dom'
-import { useQuery, useMutation, useQueryClient } from 'react-query'
-import { getFilteredDisciplines, deleteDiscipline } from '../../../api'
+import { useDeleteMutation, useFilteredQuery } from '../../../api/disciplines'
 
 import Presentation from './Presentation'
 
 const QueryWrapper = ({ filter, ...props }) => {
   const history = useHistory()
-  const queryClient = useQueryClient()
 
-  const { mutate: $delete } = useMutation(deleteDiscipline, {
-    onSuccess: async () => {
-      await queryClient.invalidateQueries('disciplines')
-    },
-  })
-
-  const { isFetching, data: disciplines } = useQuery(
-    ['disciplines', filter],
-    getFilteredDisciplines
-  )
+  const { $delete } = useDeleteMutation()
+  const { isLoading, disciplines } = useFilteredQuery(filter)
 
   return (
     <Presentation
       {...props}
-      isLoading={isFetching}
+      isLoading={isLoading}
       disciplines={disciplines}
       onEdit={(id) => history.push(`/disciplines/edit/${id}`)}
       onDelete={$delete}

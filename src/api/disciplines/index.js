@@ -1,7 +1,4 @@
-import addDiscipline from './addDiscipline'
-import deleteDiscipline from './deleteDiscipline'
-import getDiscipline from './getDiscipline'
-import getFiltered from './getFiltered'
-import updateDiscipline from './updateDiscipline'
+import { useAddMutation, useDeleteMutation, useSaveMutation } from './mutations'
+import { useFilteredQuery, useSingleQuery } from './queries'
 
-export { addDiscipline, deleteDiscipline, getDiscipline, getFiltered, updateDiscipline }
+export { useAddMutation, useDeleteMutation, useSaveMutation, useFilteredQuery, useSingleQuery }

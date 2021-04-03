@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { ValidationError } from '../common'
+import { ValidationError } from '../../common'
 
-const signIn = async ({ username, password }) => {
+const signInCall = async ({ username, password }) => {
   try {
     const response = await axios.post('users', { username, password })
     return response.data.resource
@@ -20,4 +20,4 @@ const signIn = async ({ username, password }) => {
   }
 }
 
-export default signIn
+export default signInCall

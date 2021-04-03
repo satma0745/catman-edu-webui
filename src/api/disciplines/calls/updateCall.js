@@ -1,9 +1,9 @@
 import axios from 'axios'
-import { getUserInfo } from '../../auth'
+import { getUserInfo } from '../../../auth'
 
-import { NotFoundError, ValidationError } from '../common'
+import { NotFoundError, ValidationError } from '../../common'
 
-const updateDiscipline = async (id, discipline) => {
+const updateCall = async (id, discipline) => {
   try {
     const token = getUserInfo()?.token
     const auth = `Bearer ${token}`
@@ -23,4 +23,4 @@ const updateDiscipline = async (id, discipline) => {
   }
 }
 
-export default updateDiscipline
+export default updateCall

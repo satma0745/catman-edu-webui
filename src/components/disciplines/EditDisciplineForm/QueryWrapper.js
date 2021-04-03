@@ -1,41 +1,23 @@
 import { useHistory } from 'react-router-dom'
-
-import { useQuery, useMutation, useQueryClient } from 'react-query'
-import { getDiscipline, updateDiscipline } from '../../../api/disciplines'
+import { useSingleQuery, useSaveMutation } from '../../../api/disciplines'
 
 import { Loadable } from '../../common'
 import Presentation from './Presentation'
 
 const QueryWrapper = ({ id }) => {
   const history = useHistory()
-  const queryClient = useQueryClient()
 
-  const { isLoading, data: existingDiscipline } = useQuery(['disciplines', id], getDiscipline, {
-    onError: ({ notFound }) => {
-      if (notFound) history.push('/notfound')
-    },
+  const { isLoading, discipline: existingDiscipline } = useSingleQuery(id, {
+    onNotFoundError: () => history.push('/notfound'),
   })
 
-  const { mutate: save } = useMutation((discipline) => updateDiscipline(id, discipline), {
-    onSuccess: () => {
-      queryClient.invalidateQueries('/disciplines')
-      history.push('/disciplines')
-    },
-    onError: ({ notFound }) => {
-      if (notFound) history.push('/notfound')
-    },
-  })
+  const { save } = useSaveMutation(id, { onSuccess: () => history.push('/disciplines') })
+  const onSubmit = (discipline, { setErrors }) => {
+    save(discipline, { onValidationError: setErrors })
+  }
 
   const cancel = () => {
     history.push('/disciplines')
-  }
-
-  const onSubmit = (discipline, { setErrors }) => {
-    save(discipline, {
-      onError: ({ validation }) => {
-        if (validation) setErrors(validation)
-      },
-    })
   }
 
   return (

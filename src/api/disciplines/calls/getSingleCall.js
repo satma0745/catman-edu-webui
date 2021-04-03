@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { NotFoundError } from '../common'
+import { NotFoundError } from '../../common'
 
-const getDiscipline = async (id) => {
+const getSingleCall = async (id) => {
   try {
     const response = await axios.get(`/disciplines/${id}`)
     return response.data.resource
@@ -16,7 +16,7 @@ const getDiscipline = async (id) => {
 
 const queryWrapper = ({ queryKey }) => {
   const [_, id] = queryKey
-  return getDiscipline(id)
+  return getSingleCall(id)
 }
 
 export default queryWrapper

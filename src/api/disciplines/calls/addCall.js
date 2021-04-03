@@ -1,9 +1,9 @@
 import axios from 'axios'
-import { getUserInfo } from '../../auth'
+import { getUserInfo } from '../../../auth'
 
-import { ValidationError } from '../common'
+import { ValidationError } from '../../common'
 
-const addDiscipline = async ({ title, grade }) => {
+const addCall = async ({ title, grade }) => {
   try {
     const token = getUserInfo()?.token
     const auth = `Bearer ${token}`
@@ -19,4 +19,4 @@ const addDiscipline = async ({ title, grade }) => {
   }
 }
 
-export default addDiscipline
+export default addCall
