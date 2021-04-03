@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom'
-import { useDeleteMutation, useFilteredQuery } from '../../../api/disciplines'
+import { useDeleteMutation, useFilteredQuery } from 'api/disciplines'
 
 import Presentation from './Presentation'
 

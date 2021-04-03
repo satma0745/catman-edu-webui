@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { ValidationError } from '../../common'
+import { ValidationError } from 'api/common'
 
 const signInCall = async ({ username, password }) => {
   try {

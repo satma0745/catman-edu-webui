@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom'
-import { useAddMutation } from '../../../api/disciplines'
+import { useAddMutation } from 'api/disciplines'
 
 import Presentation from './Presentation'
 

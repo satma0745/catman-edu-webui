@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-import { useAuth } from '../../../auth'
+import { useAuth } from 'auth'
 
 const SignedControls = ({ username, signOut }) => (
   <Form inline>

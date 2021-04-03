@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { setUserInfo } from '../../auth'
+import { setUserInfo } from 'auth'
 
 const configureAxios = () => {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getUserInfo } from '../../../auth'
+import { getUserInfo } from 'auth'
 
 const deleteCall = (id) => {
   const token = getUserInfo()?.token

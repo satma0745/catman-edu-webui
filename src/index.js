@@ -4,14 +4,14 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { configureAxios } from './api'
+import { configureAxios } from 'api'
 
-import { AuthProvider, loadUserInfo } from './auth'
+import { AuthProvider, loadUserInfo } from 'auth'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 
-import App from './components/App'
+import App from 'components/App'
 
 configureAxios()
 loadUserInfo()

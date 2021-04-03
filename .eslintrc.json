@@ -1,32 +1,39 @@
 {
   "env": {
-      "browser": true,
-      "es2021": true
+    "browser": true,
+    "es2021": true
   },
   "parser": "babel-eslint",
   "extends": [
-      "plugin:react/recommended",
-      "airbnb",
-      "prettier"
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier",
+    "react-app",
+    "plugin:import/errors",
+    "plugin:import/warnings"
   ],
-  "parserOptions": {
-      "ecmaFeatures": {
-          "jsx": true
-      },
-      "ecmaVersion": 12,
-      "sourceType": "module"
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
   },
-  "plugins": [
-      "react",
-      "prettier"
-  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier"],
   "rules": {
-      "prettier/prettier": "error",
-      "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
-      "react/jsx-props-no-spreading": "off",
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off",
-      "import/prefer-default-export": "off",
-      "no-unused-vars": ["error", { "varsIgnorePattern": "^_" }]
+    "prettier/prettier": "error",
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/jsx-props-no-spreading": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-vars": ["error", { "varsIgnorePattern": "^_" }]
   }
 }

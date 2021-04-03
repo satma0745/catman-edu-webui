@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { getUserInfo } from '../../../auth'
+import { getUserInfo } from 'auth'
 
-import { ValidationError } from '../../common'
+import { ValidationError } from 'api/common'
 
 const addCall = async ({ title, grade }) => {
   try {

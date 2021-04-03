@@ -1,4 +1,4 @@
-import { AddDisciplineForm } from '../../components/disciplines'
+import { AddDisciplineForm } from 'components/disciplines'
 
 const AddDisciplinePage = () => <AddDisciplineForm />
 

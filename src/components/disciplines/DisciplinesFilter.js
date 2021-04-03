@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { Dropdown } from '../common/controls'
+import { Dropdown } from 'components/common/controls'
 
 const grades = [
   'Все классы',

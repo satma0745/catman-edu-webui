@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom'
-import { useSingleQuery, useSaveMutation } from '../../../api/disciplines'
+import { useSingleQuery, useSaveMutation } from 'api/disciplines'
 
-import { Loadable } from '../../common'
+import { Loadable } from 'components/common'
 import Presentation from './Presentation'
 
 const QueryWrapper = ({ id }) => {

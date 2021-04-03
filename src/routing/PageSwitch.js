@@ -1,5 +1,4 @@
 import { Switch } from 'react-router-dom'
-import { PublicRoute, PrivateRoute } from './routes'
 
 import {
   AdminsPage,
@@ -14,7 +13,8 @@ import {
   TestingPage,
   TestingResultsPage,
   TestsPage,
-} from '../pages'
+} from 'pages'
+import { PublicRoute, PrivateRoute } from './routes'
 
 const PageSwitch = () => (
   <Switch>

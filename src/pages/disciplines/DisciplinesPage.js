@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import Button from 'react-bootstrap/Button'
-import { DisciplinesFilter, DisciplinesTable } from '../../components/disciplines'
+import { DisciplinesFilter, DisciplinesTable } from 'components/disciplines'
 
 const DisciplinesPage = () => {
   const history = useHistory()

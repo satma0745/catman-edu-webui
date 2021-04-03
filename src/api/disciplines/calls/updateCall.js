@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { getUserInfo } from '../../../auth'
+import { getUserInfo } from 'auth'
 
-import { NotFoundError, ValidationError } from '../../common'
+import { NotFoundError, ValidationError } from 'api/common'
 
 const updateCall = async (id, discipline) => {
   try {

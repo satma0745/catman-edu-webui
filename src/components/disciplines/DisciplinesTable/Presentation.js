@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Table from 'react-bootstrap/Table'
 
-import { Loadable } from '../../common'
+import { Loadable } from 'components/common'
 
 const Presentation = ({
   className,

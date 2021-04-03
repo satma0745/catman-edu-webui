@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { EditDisciplineForm } from '../../components/disciplines'
+import { EditDisciplineForm } from 'components/disciplines'
 
 const EditDisciplinePage = () => {
   const { id } = useParams()

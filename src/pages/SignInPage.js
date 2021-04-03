@@ -3,10 +3,10 @@ import { useHistory } from 'react-router-dom'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import { SignInForm } from '../components/auth'
+import { SignInForm } from 'components/auth'
 
-import { useSignInMutation } from '../api/auth'
-import { useAuth } from '../auth'
+import { useSignInMutation } from 'api/auth'
+import { useAuth } from 'auth'
 
 const SignInPage = () => {
   const [_, setUserInfo] = useAuth()

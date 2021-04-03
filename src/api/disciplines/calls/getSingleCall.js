@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { NotFoundError } from '../../common'
+import { NotFoundError } from 'api/common'
 
 const getSingleCall = async (id) => {
   try {

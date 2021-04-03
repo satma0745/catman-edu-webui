@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
 
-import { useAuth } from '../../../auth'
+import { useAuth } from 'auth'
 
 const UnsignedLinks = () => <Nav className="mr-auto" />
 

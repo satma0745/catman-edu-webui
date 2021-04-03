@@ -1,5 +1,5 @@
 import { Route, Redirect } from 'react-router-dom'
-import { useAuth } from '../../auth'
+import { useAuth } from 'auth'
 
 const PrivateRoute = ({ adminOnly = false, studentOnly = false, render: Component, ...rest }) => {
   if (adminOnly && studentOnly) {

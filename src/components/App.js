@@ -2,8 +2,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import { PageSwitch } from 'routing'
 import Header from './layout/Header'
-import { PageSwitch } from '../routing'
 
 const App = () => (
   <div className="app bg-light h-100 d-flex flex-column">

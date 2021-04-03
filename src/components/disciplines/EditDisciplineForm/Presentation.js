@@ -2,9 +2,9 @@ import { Formik, Form } from 'formik'
 import { object } from 'yup'
 
 import Button from 'react-bootstrap/Button'
-import { Input } from '../../common/controls'
+import { Input } from 'components/common/controls'
 
-import { grade, title } from '../../../validation/discipline'
+import { grade, title } from 'validation/discipline'
 
 const schema = object().shape({
   title: title().required('Введите название дисциплины'),
