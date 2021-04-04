@@ -1,13 +1,8 @@
 import { Switch } from 'react-router-dom'
+import { PublicRoute, PrivateRoute } from 'routing/routes'
 
 import {
   AdminsPage,
-  AddDisciplinePage,
-  AddGroupPage,
-  DisciplinesPage,
-  EditDisciplinePage,
-  EditGroupPage,
-  GroupsPage,
   HomePage,
   NotFoundPage,
   SignInPage,
@@ -16,7 +11,9 @@ import {
   TestingResultsPage,
   TestsPage,
 } from 'pages'
-import { PublicRoute, PrivateRoute } from './routes'
+
+import DisciplinesSwitch from './DisciplinesSwitch'
+import GroupsSwitch from './GroupsSwitch'
 
 const PageSwitch = () => (
   <Switch>
@@ -27,12 +24,8 @@ const PageSwitch = () => (
 
     <PrivateRoute adminOnly path="/admins" render={AdminsPage} />
     <PrivateRoute adminOnly path="/students" render={StudentsPage} />
-    <PrivateRoute adminOnly path="/groups/add" render={AddGroupPage} />
-    <PrivateRoute adminOnly path="/groups/edit/:id" render={EditGroupPage} />
-    <PrivateRoute adminOnly path="/groups" render={GroupsPage} />
-    <PrivateRoute adminOnly path="/disciplines/add" render={AddDisciplinePage} />
-    <PrivateRoute adminOnly path="/disciplines/edit/:id" render={EditDisciplinePage} />
-    <PrivateRoute adminOnly path="/disciplines" render={DisciplinesPage} />
+    <PrivateRoute adminOnly path="/disciplines" render={DisciplinesSwitch} />
+    <PrivateRoute adminOnly path="/groups" render={GroupsSwitch} />
     <PrivateRoute adminOnly path="/tests" render={TestsPage} />
 
     <PrivateRoute studentOnly path="/testing" render={TestingPage} />
