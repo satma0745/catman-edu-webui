@@ -1,3 +1,4 @@
+import AddGroupForm from './AddGroupForm'
 import GroupsTable from './GroupsTable'
 
-export { GroupsTable }
+export { AddGroupForm, GroupsTable }

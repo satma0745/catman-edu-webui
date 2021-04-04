@@ -1,4 +1,4 @@
-import { useDeleteMutation } from './mutations'
+import { useAddMutation, useDeleteMutation } from './mutations'
 import { useAllQuery } from './queries'
 
-export { useDeleteMutation, useAllQuery }
+export { useAddMutation, useDeleteMutation, useAllQuery }

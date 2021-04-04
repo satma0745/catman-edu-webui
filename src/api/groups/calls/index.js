@@ -1,4 +1,5 @@
+import addCall from './addCall'
 import deleteCall from './deleteCall'
 import getAllCall from './getAllCall'
 
-export { deleteCall, getAllCall }
+export { addCall, deleteCall, getAllCall }

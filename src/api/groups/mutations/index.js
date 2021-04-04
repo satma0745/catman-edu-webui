@@ -1,3 +1,4 @@
+import useAddMutation from './useAddMutation'
 import useDeleteMutation from './useDeleteMutation'
 
-export { useDeleteMutation }
+export { useAddMutation, useDeleteMutation }
