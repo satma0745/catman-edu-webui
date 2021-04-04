@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 
-const Presentation = ({ className, groups, onDelete: $delete, ...props }) => (
+const Presentation = ({ className, groups, onEdit: edit, onDelete: $delete, ...props }) => (
   <Table {...props} className={`mb-0 ${className}`} striped bordered hover>
     <thead>
       <tr>
@@ -18,6 +18,9 @@ const Presentation = ({ className, groups, onDelete: $delete, ...props }) => (
           <td className="align-middle">{grade}</td>
           <td>
             <Form inline className="justify-content-around">
+              <Button variant="outline-primary" onClick={() => edit(id)}>
+                Изменить
+              </Button>
               <Button variant="outline-danger" onClick={() => $delete(id)}>
                 Удалить
               </Button>
