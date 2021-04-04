@@ -12,7 +12,7 @@ const QueryWrapper = () => {
   }
 
   const cancel = () => {
-    history.push('/group')
+    history.push('/groups')
   }
 
   return <Presentation onCancel={cancel} onSubmit={onSubmit} />

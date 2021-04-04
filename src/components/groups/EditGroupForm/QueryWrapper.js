@@ -17,7 +17,7 @@ const QueryWrapper = ({ id }) => {
   }
 
   const cancel = () => {
-    history.push('/group')
+    history.push('/groups')
   }
 
   return (
