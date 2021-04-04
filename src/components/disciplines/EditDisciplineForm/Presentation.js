@@ -2,7 +2,7 @@ import { Formik, Form } from 'formik'
 import { object } from 'yup'
 
 import Button from 'react-bootstrap/Button'
-import { Input } from 'components/common/controls'
+import { Input } from 'components/common/controls/formik'
 
 import { grade, title } from 'validation/discipline'
 

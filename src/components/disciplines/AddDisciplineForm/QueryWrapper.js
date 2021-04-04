@@ -3,7 +3,7 @@ import { useAddMutation } from 'api/disciplines'
 
 import Presentation from './Presentation'
 
-const QueryWrapper = () => {
+const QueryWrapper = ({ defaultGrade }) => {
   const history = useHistory()
 
   const { add } = useAddMutation({ onSuccess: () => history.push('/disciplines') })
@@ -15,7 +15,7 @@ const QueryWrapper = () => {
     history.push('/disciplines')
   }
 
-  return <Presentation onCancel={cancel} onSubmit={onSubmit} />
+  return <Presentation defaultGrade={defaultGrade} onCancel={cancel} onSubmit={onSubmit} />
 }
 
 export default QueryWrapper

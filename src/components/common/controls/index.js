@@ -1,5 +1,9 @@
+import {
+  Dropdown as FormikDropdown,
+  Input as FormikInput,
+  PasswordInput as FormikPasswordInput,
+} from './formik'
 import Dropdown from './Dropdown'
-import Input from './Input'
-import PasswordInput from './PasswordInput'
+import Pagination from './Pagination'
 
-export { Dropdown, Input, PasswordInput }
+export { FormikDropdown, FormikInput, FormikPasswordInput, Dropdown, Pagination }

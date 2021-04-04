@@ -1,4 +1,4 @@
-import { Dropdown, Input, PasswordInput } from './controls'
+import { Dropdown, FormikDropdown, FormikInput, Pagination, FormikPasswordInput } from './controls'
 import Loadable from './Loadable'
 
-export { Dropdown, Input, PasswordInput, Loadable }
+export { Dropdown, FormikDropdown, FormikInput, Pagination, FormikPasswordInput, Loadable }

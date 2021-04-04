@@ -2,7 +2,7 @@ import { Formik, Form } from 'formik'
 import { object, string } from 'yup'
 
 import Button from 'react-bootstrap/Button'
-import { Input, PasswordInput } from 'components/common/controls'
+import { Input, PasswordInput } from 'components/common/controls/formik'
 
 const initial = { username: '', password: '' }
 
