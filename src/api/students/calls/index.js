@@ -1,3 +1,4 @@
+import deleteCall from './deleteCall'
 import getPaginatedCall from './getPaginatedCall'
 
-export { getPaginatedCall }
+export { deleteCall, getPaginatedCall }

@@ -1,7 +1,17 @@
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 import { Pagination } from 'components/common'
 
-const Presentation = ({ className, students, pageNumber, pagesCount, onPageChange, ...props }) => (
+const Presentation = ({
+  className,
+  students,
+  pageNumber,
+  pagesCount,
+  onPageChange,
+  onDelete: $delete,
+  ...props
+}) => (
   <div className={className}>
     <Table {...props} striped bordered hover>
       <thead>
@@ -16,7 +26,13 @@ const Presentation = ({ className, students, pageNumber, pagesCount, onPageChang
           <tr key={id}>
             <td className="align-middle">{fullName}</td>
             <td className="align-middle">{group}</td>
-            <td />
+            <td>
+              <Form inline className="justify-content-around">
+                <Button variant="outline-danger" onClick={() => $delete(id)}>
+                  Удалить
+                </Button>
+              </Form>
+            </td>
           </tr>
         ))}
       </tbody>
