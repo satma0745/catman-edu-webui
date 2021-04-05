@@ -1,4 +1,4 @@
-import { Dropdown, Input, PasswordInput } from './controls'
+import { Dropdown, Input, Pagination, PasswordInput } from './controls'
 import Loadable from './Loadable'
 
-export { Dropdown, Input, PasswordInput, Loadable }
+export { Dropdown, Input, Pagination, PasswordInput, Loadable }
