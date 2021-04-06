@@ -1,3 +1,4 @@
+import RegisterStudentForm from './RegisterStudentForm'
 import StudentsTable from './StudentsTable'
 
-export { StudentsTable }
+export { RegisterStudentForm, StudentsTable }

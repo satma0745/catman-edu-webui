@@ -1,0 +1,5 @@
+/* fix grade dropdown height */
+.dropdown-menu.show {
+  max-height: 35vh !important;
+  overflow-y: auto !important;
+}

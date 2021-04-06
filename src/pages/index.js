@@ -4,7 +4,7 @@ import { AddGroupPage, EditGroupPage, GroupsPage } from './groups'
 import HomePage from './HomePage'
 import NotFoundPage from './NotFoundPage'
 import SignInPage from './SignInPage'
-import StudentsPage from './StudentsPage'
+import { RegisterStudentPage, StudentsPage } from './students'
 import TestingPage from './TestingPage'
 import TestingResultsPage from './TestingResultsPage'
 import TestsPage from './TestsPage'
@@ -20,6 +20,7 @@ export {
   HomePage,
   NotFoundPage,
   SignInPage,
+  RegisterStudentPage,
   StudentsPage,
   TestingPage,
   TestingResultsPage,

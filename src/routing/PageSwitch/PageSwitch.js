@@ -6,7 +6,6 @@ import {
   HomePage,
   NotFoundPage,
   SignInPage,
-  StudentsPage,
   TestingPage,
   TestingResultsPage,
   TestsPage,
@@ -14,6 +13,7 @@ import {
 
 import DisciplinesSwitch from './DisciplinesSwitch'
 import GroupsSwitch from './GroupsSwitch'
+import StudentsSwitch from './StudentsSwitch'
 
 const PageSwitch = () => (
   <Switch>
@@ -23,7 +23,7 @@ const PageSwitch = () => (
     <PrivateRoute path="/testingResults" render={TestingResultsPage} />
 
     <PrivateRoute adminOnly path="/admins" render={AdminsPage} />
-    <PrivateRoute adminOnly path="/students" render={StudentsPage} />
+    <PrivateRoute adminOnly path="/students" render={StudentsSwitch} />
     <PrivateRoute adminOnly path="/disciplines" render={DisciplinesSwitch} />
     <PrivateRoute adminOnly path="/groups" render={GroupsSwitch} />
     <PrivateRoute adminOnly path="/tests" render={TestsPage} />
