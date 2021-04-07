@@ -1,4 +1,4 @@
-import AdminsPage from './AdminsPage'
+import { AdminsPage, RegisterAdminPage } from './admins'
 import { AddDisciplinePage, DisciplinesPage, EditDisciplinePage } from './disciplines'
 import { AddGroupPage, EditGroupPage, GroupsPage } from './groups'
 import HomePage from './HomePage'
@@ -11,6 +11,7 @@ import TestsPage from './TestsPage'
 
 export {
   AdminsPage,
+  RegisterAdminPage,
   AddDisciplinePage,
   AddGroupPage,
   DisciplinesPage,
