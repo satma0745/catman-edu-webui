@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { usePaginatedQuery } from 'api/admins'
+import { usePaginatedQuery, useDeleteMutation } from 'api/admins'
 
 import AdminsTable from './Presentation'
 
@@ -16,6 +16,8 @@ const QueryWrapper = (props) => {
     if (paginationInfo) setPagesCount(paginationInfo.pagesCount)
   }, [paginationInfo, setPagesCount])
 
+  const { $delete } = useDeleteMutation()
+
   return (
     <AdminsTable
       {...props}
@@ -24,6 +26,7 @@ const QueryWrapper = (props) => {
       pageNumber={pageNumber}
       pagesCount={pagesCount}
       onPageChange={setPageNumber}
+      onDelete={$delete}
     />
   )
 }
