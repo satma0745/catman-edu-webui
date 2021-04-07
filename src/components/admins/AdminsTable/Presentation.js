@@ -10,6 +10,7 @@ const AdminsTable = ({
   pageNumber,
   pagesCount,
   onPageChange,
+  onEdit: edit,
   onDelete: $delete,
   ...props
 }) => (
@@ -28,6 +29,9 @@ const AdminsTable = ({
               <td className="align-middle">{username}</td>
               <td>
                 <Form inline className="justify-content-around">
+                  <Button variant="outline-primary" onClick={() => edit(id)}>
+                    Изменить
+                  </Button>
                   <Button variant="outline-danger" onClick={() => $delete(id)}>
                     Удалить
                   </Button>

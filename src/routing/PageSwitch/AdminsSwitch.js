@@ -1,7 +1,7 @@
 import { Switch, useRouteMatch } from 'react-router-dom'
 import { PrivateRoute } from 'routing/routes'
 
-import { RegisterAdminPage, AdminsPage } from 'pages'
+import { RegisterAdminPage, EditAdminPage, AdminsPage } from 'pages'
 
 const StudentsSwitch = () => {
   const { path } = useRouteMatch()
@@ -9,6 +9,7 @@ const StudentsSwitch = () => {
   return (
     <Switch>
       <PrivateRoute adminOnly path={`${path}/register`} render={RegisterAdminPage} />
+      <PrivateRoute adminOnly path={`${path}/edit/:id`} render={EditAdminPage} />
       <PrivateRoute adminOnly path={`${path}`} render={AdminsPage} />
     </Switch>
   )

@@ -1,4 +1,10 @@
-import { usePaginatedQuery } from './queries'
-import { useDeleteMutation, useRegisterMutation } from './mutations'
+import { usePaginatedQuery, useSingleQuery } from './queries'
+import { useDeleteMutation, useRegisterMutation, useSaveMutation } from './mutations'
 
-export { usePaginatedQuery, useDeleteMutation, useRegisterMutation }
+export {
+  usePaginatedQuery,
+  useSingleQuery,
+  useDeleteMutation,
+  useRegisterMutation,
+  useSaveMutation,
+}
