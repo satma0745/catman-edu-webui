@@ -1,4 +1,5 @@
+import EditStudentPage from './EditStudentPage'
 import RegisterStudentPage from './RegisterStudentPage'
 import StudentsPage from './StudentsPage'
 
-export { RegisterStudentPage, StudentsPage }
+export { EditStudentPage, RegisterStudentPage, StudentsPage }

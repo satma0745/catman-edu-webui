@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
+
 import { usePaginatedQuery, useDeleteMutation } from 'api/students'
 
 import { Loadable } from 'components/common'
 import Presentation from './Presentation'
 
 const QueryWrapper = ({ filter, ...props }) => {
+  const history = useHistory()
+
   const [pageNumber, setPageNumber] = useState(1)
   const [pagesCount, setPagesCount] = useState(1)
 
@@ -30,6 +34,7 @@ const QueryWrapper = ({ filter, ...props }) => {
         pageNumber={pageNumber}
         pagesCount={pagesCount}
         onPageChange={setPageNumber}
+        onEdit={(id) => history.push(`/students/edit/${id}`)}
         onDelete={$delete}
       />
     </Loadable>

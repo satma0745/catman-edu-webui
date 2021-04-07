@@ -9,6 +9,7 @@ const Presentation = ({
   pageNumber,
   pagesCount,
   onPageChange,
+  onEdit: edit,
   onDelete: $delete,
   ...props
 }) => (
@@ -28,6 +29,9 @@ const Presentation = ({
             <td className="align-middle">{group}</td>
             <td>
               <Form inline className="justify-content-around">
+                <Button variant="outline-primary" onClick={() => edit(id)}>
+                  Изменить
+                </Button>
                 <Button variant="outline-danger" onClick={() => $delete(id)}>
                   Удалить
                 </Button>
