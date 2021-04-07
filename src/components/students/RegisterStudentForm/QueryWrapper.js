@@ -21,7 +21,7 @@ const QueryWrapper = () => {
     <RegisterStudentForm
       isLoading={isLoading}
       groups={groupsList()}
-      onCancel={() => {}}
+      onCancel={() => history.push('/students')}
       onSubmit={onSubmit}
     />
   )
