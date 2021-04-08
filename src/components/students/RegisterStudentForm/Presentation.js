@@ -10,8 +10,6 @@ import { Loadable } from 'components/common'
 
 import './index.css'
 
-const initialValues = { username: '', password: '', fullName: '', groupId: '' }
-
 const schema = object().shape({
   username: username().required('Укажите имя пользователя'),
   password: password().required('Укажите пароль пользователя'),
@@ -19,11 +17,22 @@ const schema = object().shape({
   groupId: string().required('Укажите класс'),
 })
 
-const RegisterStudentForm = ({ isLoading, groups, onCancel: cancel, onSubmit, ...props }) => (
+const RegisterStudentForm = ({
+  isLoading,
+  groups,
+  defaultGroupId,
+  onCancel: cancel,
+  onSubmit,
+  ...props
+}) => (
   <Loadable loaded={!isLoading}>
     <div {...props}>
       <h2 className="mb-5">Регистрация студента</h2>
-      <Formik initialValues={initialValues} validationSchema={schema} onSubmit={onSubmit}>
+      <Formik
+        initialValues={{ username: '', password: '', fullName: '', groupId: defaultGroupId ?? '' }}
+        validationSchema={schema}
+        onSubmit={onSubmit}
+      >
         <Form>
           <Input className="my-4" label="Имя пользователя" name="username" />
           <PasswordInput className="my-4" label="Пароль пользователя" name="password" />

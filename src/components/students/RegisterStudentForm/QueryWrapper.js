@@ -5,7 +5,7 @@ import { useRegisterMutation } from 'api/students'
 
 import RegisterStudentForm from './Presentation'
 
-const QueryWrapper = () => {
+const QueryWrapper = ({ defaultGroupId }) => {
   const history = useHistory()
 
   const { isLoading, groups } = useGroupsQuery()
@@ -21,6 +21,7 @@ const QueryWrapper = () => {
     <RegisterStudentForm
       isLoading={isLoading}
       groups={groupsList()}
+      defaultGroupId={defaultGroupId}
       onCancel={() => history.push('/students')}
       onSubmit={onSubmit}
     />
