@@ -11,7 +11,7 @@ const schema = object().shape({
   grade: grade().required('Укажите год обучения'),
 })
 
-const EditDisciplineForm = ({ initialValues, onCancel: cancel, onSubmit, ...props }) => (
+const EditGroupForm = ({ initialValues, onCancel: cancel, onSubmit, ...props }) => (
   <div {...props}>
     <h2 className="mb-5">Редактирование класса</h2>
     <Formik initialValues={initialValues} validationSchema={schema} onSubmit={onSubmit}>
@@ -30,4 +30,4 @@ const EditDisciplineForm = ({ initialValues, onCancel: cancel, onSubmit, ...prop
   </div>
 )
 
-export default EditDisciplineForm
+export default EditGroupForm

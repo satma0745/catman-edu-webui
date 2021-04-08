@@ -12,8 +12,8 @@ const QueryWrapper = ({ id }) => {
   })
 
   const { save } = useSaveMutation(id, { onSuccess: () => history.push('/groups') })
-  const onSubmit = (discipline, { setErrors }) => {
-    save(discipline, { onValidationError: setErrors })
+  const onSubmit = (group, { setErrors }) => {
+    save(group, { onValidationError: setErrors })
   }
 
   const cancel = () => {

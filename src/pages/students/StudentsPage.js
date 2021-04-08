@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import { StudentsFilter, StudentsTable } from 'components/students'
 
-const DisciplinesPage = () => {
+const StudentsPage = () => {
   const history = useHistory()
   const [filter, setFilter] = useState({})
 
@@ -33,4 +33,4 @@ const DisciplinesPage = () => {
   )
 }
 
-export default DisciplinesPage
+export default StudentsPage
