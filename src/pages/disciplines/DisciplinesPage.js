@@ -8,6 +8,16 @@ const DisciplinesPage = () => {
   const history = useHistory()
   const [filter, setFilter] = useState({})
 
+  const onAddClick = () => {
+    const { grade } = filter
+    if (grade) {
+      const params = new URLSearchParams({ grade })
+      history.push(`/disciplines/add?${params}`)
+    } else {
+      history.push('disciplines/add')
+    }
+  }
+
   return (
     <>
       <h1>Страница управления дисциплинами</h1>
@@ -16,7 +26,7 @@ const DisciplinesPage = () => {
       <DisciplinesTable className="my-4" filter={filter} />
 
       <div className="d-flex justify-content-center">
-        <Button onClick={() => history.push('/disciplines/add')}>Добавить дисциплину</Button>
+        <Button onClick={onAddClick}>Добавить дисциплину</Button>
       </div>
     </>
   )
