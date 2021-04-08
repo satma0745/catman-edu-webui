@@ -1,10 +1,23 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import BSDropdown from 'react-bootstrap/Dropdown'
 import BSDropdownButton from 'react-bootstrap/DropdownButton'
 
-const Dropdown = ({ title: defaultTitle, items = [], onSelect: select, ...props }) => {
+const Dropdown = ({
+  title: defaultTitle,
+  items = [],
+  initialValue,
+  onSelect: select,
+  ...props
+}) => {
   const [title, setTitle] = useState(defaultTitle)
+
+  useEffect(() => {
+    const text = items[initialValue]
+    if (text) {
+      setTitle(text)
+    }
+  }, [initialValue, items, setTitle])
 
   const onSelect = (key, event) => {
     const text = event.target.innerText
