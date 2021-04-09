@@ -1,3 +1,4 @@
+import TestsFilter from './TestsFilter'
 import TestsTable from './TestsTable'
 
-export { TestsTable }
+export { TestsFilter, TestsTable }

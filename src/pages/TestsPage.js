@@ -1,10 +1,16 @@
-import { TestsTable } from 'components/tests'
+import { useState } from 'react'
+import { TestsFilter, TestsTable } from 'components/tests'
 
-const TestsPage = () => (
-  <>
-    <h1>Страница управления тестами</h1>
-    <TestsTable className="my-4" />
-  </>
-)
+const TestsPage = () => {
+  const [filter, setFilter] = useState({})
+
+  return (
+    <>
+      <h1>Страница управления тестами</h1>
+      <TestsFilter className="my-4" onApply={setFilter} />
+      <TestsTable className="my-4" filter={filter} />
+    </>
+  )
+}
 
 export default TestsPage

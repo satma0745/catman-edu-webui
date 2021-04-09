@@ -3,14 +3,17 @@ import { usePaginatedQuery, useDeleteMutation } from 'api/tests'
 
 import TestsTable from './Presentation'
 
-const QueryWrapper = (props) => {
+const QueryWrapper = ({ filter, ...props }) => {
   const [pageNumber, setPageNumber] = useState(1)
   const [pagesCount, setPagesCount] = useState(1)
 
-  const { isLoading, tests, paginationInfo } = usePaginatedQuery({
-    page: pageNumber,
-    pageSize: 50,
-  })
+  const { isLoading, tests, paginationInfo } = usePaginatedQuery(
+    {
+      page: pageNumber,
+      pageSize: 50,
+    },
+    filter
+  )
 
   const { $delete } = useDeleteMutation()
 

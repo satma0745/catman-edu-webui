@@ -3,15 +3,15 @@ import { useFilteredQuery as useDisciplinesQuery } from 'api/disciplines'
 import { getPaginatedCall } from '../calls'
 
 const queryWrapper = ({ queryKey }) => {
-  const [_, paginationInfo] = queryKey
-  return getPaginatedCall(paginationInfo)
+  const [_, paginationInfo, filter] = queryKey
+  return getPaginatedCall(paginationInfo, filter)
 }
 
-const usePaginatedQuery = ({ page, pageSize }) => {
+const usePaginatedQuery = ({ page, pageSize }, filter) => {
   const { isLoading: disciplinesLoading, disciplines } = useDisciplinesQuery()
 
   const { isLoading: testsLoading, data: { tests, paginationInfo } = {} } = useQuery(
-    ['tests', { page, pageSize }],
+    ['tests', { page, pageSize }, filter],
     queryWrapper,
     { keepPreviousData: true }
   )
