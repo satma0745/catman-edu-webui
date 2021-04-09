@@ -9,6 +9,7 @@ const Presentation = ({
   isLoading,
   disciplines = [],
   onEdit: edit,
+  onTests: tests,
   onDelete: $delete,
   ...props
 }) => (
@@ -28,6 +29,9 @@ const Presentation = ({
             <td className="align-middle">{grade}</td>
             <td>
               <Form inline className="justify-content-around">
+                <Button variant="outline-info" onClick={() => tests(id)}>
+                  Тесты
+                </Button>
                 <Button variant="outline-primary" onClick={() => edit(id)}>
                   Изменить
                 </Button>

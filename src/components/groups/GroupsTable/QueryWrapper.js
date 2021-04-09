@@ -5,17 +5,20 @@ import { Loadable } from 'components/common'
 import Presentation from './Presentation'
 
 const QueryWrapper = (props) => {
+  const history = useHistory()
+
   const { isLoading, groups } = useAllQuery()
   const { $delete } = useDeleteMutation()
 
-  const history = useHistory()
-  const onEdit = (id) => {
-    history.push(`/groups/edit/${id}`)
-  }
-
   return (
     <Loadable loaded={!isLoading}>
-      <Presentation {...props} groups={groups} onEdit={onEdit} onDelete={$delete} />
+      <Presentation
+        {...props}
+        groups={groups}
+        onStudents={(groupId) => history.push(`/students?groupId=${groupId}`)}
+        onEdit={(id) => history.push(`/groups/edit/${id}`)}
+        onDelete={$delete}
+      />
     </Loadable>
   )
 }

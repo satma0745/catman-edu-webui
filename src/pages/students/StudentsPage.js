@@ -1,12 +1,12 @@
-import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { useSearch } from 'routing/utils'
 
 import Button from 'react-bootstrap/Button'
 import { StudentsFilter, StudentsTable } from 'components/students'
 
 const StudentsPage = () => {
   const history = useHistory()
-  const [filter, setFilter] = useState({})
+  const [filter, setFilter] = useSearch()
 
   const onRegisterClick = () => {
     const { groupId } = filter
@@ -22,7 +22,7 @@ const StudentsPage = () => {
     <>
       <h1>Страница управления студентами</h1>
 
-      <StudentsFilter className="my-4" onApply={setFilter} />
+      <StudentsFilter className="my-4" initials={filter} onApply={setFilter} />
 
       <StudentsTable className="my-4" filter={filter} />
 

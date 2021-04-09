@@ -1,7 +1,7 @@
 import { useAllQuery as useGroupsQuery } from 'api/groups'
 import StudentsFilter from './Presentation'
 
-const QueryWrapper = ({ onApply, ...props }) => {
+const QueryWrapper = ({ initials, onApply, ...props }) => {
   const { isLoading, groups } = useGroupsQuery()
 
   const selectableGroups = () =>
@@ -13,6 +13,7 @@ const QueryWrapper = ({ onApply, ...props }) => {
     <StudentsFilter
       isLoading={isLoading}
       groups={selectableGroups()}
+      initials={initials}
       onApply={onApply}
       {...props}
     />

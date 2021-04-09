@@ -1,11 +1,9 @@
-import { useLocation } from 'react-router-dom'
+import { useSearch } from 'routing/utils'
 import { AddDisciplineForm } from 'components/disciplines'
 
 const AddDisciplinePage = () => {
-  const { search } = useLocation()
-
-  const params = new URLSearchParams(search)
-  const grade = params.get('grade')
+  const [params] = useSearch()
+  const { grade } = params
 
   return <AddDisciplineForm defaultGrade={grade} />
 }

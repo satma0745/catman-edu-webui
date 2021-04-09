@@ -7,7 +7,7 @@ import SignInPage from './SignInPage'
 import { EditStudentPage, RegisterStudentPage, StudentsPage } from './students'
 import TestingPage from './TestingPage'
 import TestingResultsPage from './TestingResultsPage'
-import TestsPage from './TestsPage'
+import { AddTestPage, TestPage, TestsPage } from './tests'
 
 export {
   AdminsPage,
@@ -27,5 +27,7 @@ export {
   StudentsPage,
   TestingPage,
   TestingResultsPage,
+  AddTestPage,
+  TestPage,
   TestsPage,
 }

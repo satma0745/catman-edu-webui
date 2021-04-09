@@ -1,0 +1,29 @@
+import { useSearch } from 'routing/utils'
+import { useHistory } from 'react-router-dom'
+
+import { TestsFilter, TestsTable } from 'components/tests'
+import Button from 'react-bootstrap/Button'
+
+const TestsPage = () => {
+  const history = useHistory()
+
+  const [filter, setFilter] = useSearch()
+
+  return (
+    <>
+      <h1>Страница управления тестами</h1>
+
+      <TestsFilter className="my-4" initials={filter} onApply={setFilter} />
+
+      <TestsTable className="my-4" filter={filter} />
+
+      <div className="d-flex justify-content-center">
+        <Button variant="primary" onClick={() => history.push('/tests/add')}>
+          Добавить тест
+        </Button>
+      </div>
+    </>
+  )
+}
+
+export default TestsPage

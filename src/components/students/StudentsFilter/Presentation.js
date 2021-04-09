@@ -6,9 +6,9 @@ import { Dropdown } from 'components/common/controls'
 
 import { Loadable } from 'components/common'
 
-const StudentsFilter = ({ isLoading, groups, onApply, ...props }) => {
-  const [groupId, setGroupId] = useState()
-  const [fullName, setFullName] = useState()
+const StudentsFilter = ({ isLoading, initials, groups, onApply, ...props }) => {
+  const [groupId, setGroupId] = useState(initials.groupId)
+  const [fullName, setFullName] = useState(initials.fullName)
 
   const onGroupSelect = (selectedGroupId) => {
     setGroupId(selectedGroupId !== 'any' ? selectedGroupId : undefined)
@@ -26,6 +26,7 @@ const StudentsFilter = ({ isLoading, groups, onApply, ...props }) => {
           variant="outline-primary"
           title="Выберите класс"
           items={groups}
+          initialValue={initials.groupId}
           onSelect={onGroupSelect}
         />
 
@@ -33,6 +34,7 @@ const StudentsFilter = ({ isLoading, groups, onApply, ...props }) => {
           className="mr-2 flex-grow-1"
           type="text"
           placeholder="ФИО студента"
+          defaultValue={initials.fullName}
           onChange={(event) => setFullName(event.target.value)}
         />
 
