@@ -1,3 +1,5 @@
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 import { Loadable, Pagination } from 'components/common'
 
@@ -8,6 +10,7 @@ const TestsTable = ({
   pageNumber,
   pagesCount,
   onPageChange,
+  onDelete: $delete,
   ...props
 }) => (
   <Loadable loaded={!isLoading}>
@@ -27,7 +30,13 @@ const TestsTable = ({
               <td className="align-middle">{title}</td>
               <td className="align-middle">{discipline}</td>
               <td className="align-middle">{grade}</td>
-              <td />
+              <td>
+                <Form inline className="justify-content-around">
+                  <Button variant="outline-danger" onClick={() => $delete(id)}>
+                    Удалить
+                  </Button>
+                </Form>
+              </td>
             </tr>
           ))}
         </tbody>
