@@ -19,9 +19,9 @@ const grades = [
   '11й класс',
 ]
 
-const DisciplinesFilter = ({ onApply }) => {
-  const [grade, setGrade] = useState()
-  const [title, setTitle] = useState()
+const DisciplinesFilter = ({ initials, onApply }) => {
+  const [grade, setGrade] = useState(initials.grade)
+  const [title, setTitle] = useState(initials.title)
 
   return (
     <Form inline className="my-4">
@@ -30,6 +30,7 @@ const DisciplinesFilter = ({ onApply }) => {
         variant="outline-primary"
         title="Выберите класс"
         items={grades}
+        initialValue={initials.grade}
         onSelect={(selectedGrade) => setGrade(selectedGrade || undefined)}
       />
 
@@ -37,6 +38,7 @@ const DisciplinesFilter = ({ onApply }) => {
         className="mr-2 flex-grow-1"
         type="text"
         placeholder="Название дисциплины"
+        defaultValue={initials.title}
         onChange={(event) => setTitle(event.target.value)}
       />
 

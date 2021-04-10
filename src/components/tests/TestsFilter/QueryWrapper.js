@@ -1,7 +1,7 @@
 import { useFilteredQuery as useDisciplinesQuery } from 'api/disciplines'
 import TestsFilter from './Presentation'
 
-const QueryWrapper = ({ onApply, ...props }) => {
+const QueryWrapper = ({ initials, onApply, ...props }) => {
   const { isLoading, disciplines } = useDisciplinesQuery()
 
   const selectableDisciplines = () =>
@@ -19,6 +19,7 @@ const QueryWrapper = ({ onApply, ...props }) => {
     <TestsFilter
       isLoading={isLoading}
       disciplines={selectableDisciplines()}
+      initials={initials}
       onApply={onApply}
       {...props}
     />

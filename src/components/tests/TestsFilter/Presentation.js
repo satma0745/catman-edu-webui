@@ -6,9 +6,9 @@ import { Dropdown } from 'components/common/controls'
 
 import { Loadable } from 'components/common'
 
-const TestsFilter = ({ isLoading, disciplines, onApply, ...props }) => {
-  const [disciplineId, setDisciplineId] = useState()
-  const [title, setTitle] = useState()
+const TestsFilter = ({ isLoading, initials, disciplines, onApply, ...props }) => {
+  const [disciplineId, setDisciplineId] = useState(initials.disciplineId)
+  const [title, setTitle] = useState(initials.title)
 
   const onDisciplineSelect = (selectedDisciplineId) => {
     setDisciplineId(selectedDisciplineId !== 'any' ? selectedDisciplineId : undefined)
@@ -26,6 +26,7 @@ const TestsFilter = ({ isLoading, disciplines, onApply, ...props }) => {
           variant="outline-primary"
           title="Выберите дисциплину"
           items={disciplines}
+          initialValue={initials.disciplineId}
           onSelect={onDisciplineSelect}
         />
 
@@ -33,6 +34,7 @@ const TestsFilter = ({ isLoading, disciplines, onApply, ...props }) => {
           className="mr-2 flex-grow-1"
           type="text"
           placeholder="Название теста"
+          defaultValue={initials.title}
           onChange={(event) => setTitle(event.target.value)}
         />
 
