@@ -14,6 +14,7 @@ const QueryWrapper = ({ filter, ...props }) => {
       {...props}
       isLoading={isLoading}
       disciplines={disciplines}
+      onTests={(disciplineId) => history.push(`/tests?disciplineId=${disciplineId}`)}
       onEdit={(id) => history.push(`/disciplines/edit/${id}`)}
       onDelete={$delete}
     />
