@@ -1,8 +1,9 @@
+import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import QuestionTitle from './QuestionTitle'
 
-const OrderQuestion = ({ cost, text, items = [] }) => (
+const OrderQuestion = ({ cost, text, items = [], onDelete: $delete }) => (
   <Card style={{ overflow: 'hidden' }}>
     <Card.Header>
       <QuestionTitle text={text} cost={cost} />
@@ -20,6 +21,12 @@ const OrderQuestion = ({ cost, text, items = [] }) => (
           ))}
       </ListGroup>
     </Card.Body>
+
+    <Card.Footer className="d-flex justify-content-end">
+      <Button variant="outline-danger" onClick={() => $delete()}>
+        Удалить
+      </Button>
+    </Card.Footer>
   </Card>
 )
 
