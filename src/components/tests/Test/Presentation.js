@@ -23,11 +23,13 @@ const Test = ({
       </div>
 
       <ListGroup className="my-4" variant="flush">
-        {questions.map((question) => (
-          <ListGroup.Item key={question.id}>
-            <ShowQuestion {...question} />
-          </ListGroup.Item>
-        ))}
+        {questions
+          .sort((left, right) => left.cost - right.cost)
+          .map((question) => (
+            <ListGroup.Item key={question.id}>
+              <ShowQuestion {...question} />
+            </ListGroup.Item>
+          ))}
       </ListGroup>
 
       <div className="d-flex justify-content-between">
