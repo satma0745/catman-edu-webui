@@ -1,4 +1,4 @@
-import { usePaginatedQuery } from './queries'
+import { usePaginatedQuery, useSingleQuery } from './queries'
 import { useDeleteMutation } from './mutations'
 
-export { usePaginatedQuery, useDeleteMutation }
+export { usePaginatedQuery, useSingleQuery, useDeleteMutation }

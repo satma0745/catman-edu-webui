@@ -10,6 +10,7 @@ const TestsTable = ({
   pageNumber,
   pagesCount,
   onPageChange,
+  onDetails: details,
   onDelete: $delete,
   ...props
 }) => (
@@ -32,6 +33,9 @@ const TestsTable = ({
               <td className="align-middle">{grade}</td>
               <td>
                 <Form inline className="justify-content-around">
+                  <Button variant="outline-secondary" onClick={() => details(id)}>
+                    Подробнее
+                  </Button>
                   <Button variant="outline-danger" onClick={() => $delete(id)}>
                     Удалить
                   </Button>

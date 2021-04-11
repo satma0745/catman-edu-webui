@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import { usePaginatedQuery, useDeleteMutation } from 'api/tests'
 
 import TestsTable from './Presentation'
 
 const QueryWrapper = ({ filter, ...props }) => {
+  const history = useHistory()
+
   const [pageNumber, setPageNumber] = useState(1)
   const [pagesCount, setPagesCount] = useState(1)
 
@@ -29,6 +32,7 @@ const QueryWrapper = ({ filter, ...props }) => {
       pageNumber={pageNumber}
       pagesCount={pagesCount}
       onPageChange={setPageNumber}
+      onDetails={(id) => history.push(`/tests/${id}`)}
       onDelete={$delete}
     />
   )
