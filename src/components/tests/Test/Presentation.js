@@ -1,3 +1,6 @@
+import Button from 'react-bootstrap/Button'
+import ListGroup from 'react-bootstrap/ListGroup'
+
 import { Loadable } from 'components/common'
 import { ShowQuestion } from 'components/questions'
 
@@ -13,19 +16,25 @@ const Test = ({
   <Loadable loaded={!isLoading}>
     <div className={`d-flex flex-column ${className}`} {...props}>
       <div>
-        Тест &quot;{title}&quot; по дисциплине &quot;{discipline.title}&quot; ({discipline.grade}й
-        класс)
+        <h2>Тест &quot;{title}&quot;</h2>
+        <h4>
+          По дисциплине &quot;{discipline.title}&quot; ({discipline.grade}й класс)
+        </h4>
       </div>
 
-      <div>
+      <ListGroup className="my-4" variant="flush">
         {questions.map((question) => (
-          <ShowQuestion key={question.id} {...question} />
+          <ListGroup.Item key={question.id}>
+            <ShowQuestion {...question} />
+          </ListGroup.Item>
         ))}
-      </div>
+      </ListGroup>
 
-      <button type="button" onClick={() => cancel()}>
-        Назад
-      </button>
+      <div className="d-flex justify-content-between">
+        <Button variant="outline-primary" onClick={() => cancel()}>
+          Назад
+        </Button>
+      </div>
     </div>
   </Loadable>
 )

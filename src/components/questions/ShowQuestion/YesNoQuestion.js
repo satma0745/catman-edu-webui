@@ -1,18 +1,16 @@
-import { Loadable } from 'components/common'
+import Card from 'react-bootstrap/Card'
+import QuestionTitle from './QuestionTitle'
 
-const YesNoQuestion = ({ isLoading, cost, text, correctAnswer }) => (
-  <Loadable loaded={!isLoading}>
-    <div className="d-flex flex-column">
-      <div className="d-flex">
-        <div className="bg-primary">{cost}</div>
-        <div>{text}</div>
-      </div>
+const YesNoQuestion = ({ cost, text, correctAnswer }) => (
+  <Card style={{ overflow: 'hidden' }}>
+    <Card.Header>
+      <QuestionTitle text={text} cost={cost} />
+    </Card.Header>
 
-      <div className="d-flex">
-        <div>Правильный ответ: {correctAnswer ? 'Да' : 'Нет'}</div>
-      </div>
-    </div>
-  </Loadable>
+    <Card.Body style={{ backgroundColor: correctAnswer ? '#e0ffe8' : '#ffedf8' }}>
+      <Card.Text>Правильный ответ: {correctAnswer ? 'Да' : 'Нет'}</Card.Text>
+    </Card.Body>
+  </Card>
 )
 
 export default YesNoQuestion

@@ -1,22 +1,23 @@
-import { Loadable } from 'components/common'
+import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
+import QuestionTitle from './QuestionTitle'
 
-const ChoiceQuestion = ({ isLoading, cost, text, answerOptions = [] }) => (
-  <Loadable loaded={!isLoading}>
-    <div className="d-flex flex-column">
-      <div className="d-flex">
-        <div className="bg-primary">{cost}</div>
-        <div>{text}</div>
-      </div>
+const ChoiceQuestion = ({ cost, text, answerOptions = [] }) => (
+  <Card style={{ overflow: 'hidden' }}>
+    <Card.Header>
+      <QuestionTitle text={text} cost={cost} />
+    </Card.Header>
 
-      <div className="d-flex flex-column">
+    <Card.Body className="p-0">
+      <ListGroup variant="flush">
         {answerOptions.map(({ id, text: optionText, isCorrect }) => (
-          <div key={id}>
-            {optionText} ({isCorrect ? 'Правильно' : 'Не правильно'})
-          </div>
+          <ListGroup.Item key={id} style={{ backgroundColor: isCorrect ? '#e0ffe8' : '#ffedf8' }}>
+            {optionText}
+          </ListGroup.Item>
         ))}
-      </div>
-    </div>
-  </Loadable>
+      </ListGroup>
+    </Card.Body>
+  </Card>
 )
 
 export default ChoiceQuestion

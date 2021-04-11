@@ -1,22 +1,26 @@
-import { Loadable } from 'components/common'
+import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
+import QuestionTitle from './QuestionTitle'
 
-const OrderQuestion = ({ isLoading, cost, text, items = [] }) => (
-  <Loadable loaded={!isLoading}>
-    <div className="d-flex flex-column">
-      <div className="d-flex">
-        <div className="bg-primary">{cost}</div>
-        <div>{text}</div>
-      </div>
+const OrderQuestion = ({ cost, text, items = [] }) => (
+  <Card style={{ overflow: 'hidden' }}>
+    <Card.Header>
+      <QuestionTitle text={text} cost={cost} />
+    </Card.Header>
 
-      <ol>
+    <Card.Body className="p-0">
+      <ListGroup variant="flush">
         {items
           .sort(({ index }) => index)
-          .map(({ id, text: optionText }) => (
-            <li key={id}>{optionText}</li>
+          .map(({ id, text: optionText }, index) => (
+            <ListGroup.Item key={id}>
+              <span className="text-primary">{index + 1}.</span>
+              <span className="ml-1">{optionText}</span>
+            </ListGroup.Item>
           ))}
-      </ol>
-    </div>
-  </Loadable>
+      </ListGroup>
+    </Card.Body>
+  </Card>
 )
 
 export default OrderQuestion
