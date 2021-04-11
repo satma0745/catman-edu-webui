@@ -12,7 +12,7 @@ const OrderQuestion = ({ cost, text, items = [], onDelete: $delete }) => (
     <Card.Body className="p-0">
       <ListGroup variant="flush">
         {items
-          .sort(({ index }) => index)
+          .sort((left, right) => left.orderIndex - right.orderIndex)
           .map(({ id, text: optionText }, index) => (
             <ListGroup.Item key={id}>
               <span className="text-primary">{index + 1}.</span>
