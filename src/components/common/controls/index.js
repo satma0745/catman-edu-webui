@@ -1,4 +1,5 @@
 import {
+  Checkbox as FormikCheckbox,
   Dropdown as FormikDropdown,
   Input as FormikInput,
   PasswordInput as FormikPasswordInput,
@@ -6,4 +7,4 @@ import {
 import Dropdown from './Dropdown'
 import Pagination from './Pagination'
 
-export { FormikDropdown, FormikInput, FormikPasswordInput, Dropdown, Pagination }
+export { FormikCheckbox, FormikDropdown, FormikInput, FormikPasswordInput, Dropdown, Pagination }
