@@ -2,7 +2,7 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import QuestionTemplate from './QuestionTemplate'
 
 const OrderQuestion = ({ cost, text, items = [], onDelete: $delete }) => (
-  <QuestionTemplate cost={cost} text={text} onDelete={$delete}>
+  <QuestionTemplate cost={cost} text={text} onEdit={() => {}} onDelete={$delete}>
     <ListGroup variant="flush">
       {items
         .sort((left, right) => left.orderIndex - right.orderIndex)

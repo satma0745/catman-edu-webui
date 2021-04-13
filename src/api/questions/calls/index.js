@@ -1,3 +1,4 @@
 import deleteCall from './deleteCall'
+import updateCall from './updateCall'
 
-export { deleteCall }
+export { deleteCall, updateCall }

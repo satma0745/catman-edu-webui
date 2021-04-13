@@ -1,3 +1,3 @@
-import { useDeleteMutation } from './mutations'
+import { useDeleteMutation, useSaveMutation } from './mutations'
 
-export { useDeleteMutation }
+export { useDeleteMutation, useSaveMutation }

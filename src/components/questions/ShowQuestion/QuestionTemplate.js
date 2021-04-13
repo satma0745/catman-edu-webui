@@ -8,7 +8,14 @@ const QuestionTitle = ({ text, cost }) => (
   </div>
 )
 
-const QuestionTemplate = ({ text, cost, onDelete: $delete, contentBackground, children }) => (
+const QuestionTemplate = ({
+  text,
+  cost,
+  onEdit: edit,
+  onDelete: $delete,
+  contentBackground,
+  children,
+}) => (
   <Card style={{ overflow: 'hidden' }}>
     <Card.Header>
       <QuestionTitle text={text} cost={cost} />
@@ -18,7 +25,10 @@ const QuestionTemplate = ({ text, cost, onDelete: $delete, contentBackground, ch
       {children}
     </Card.Body>
 
-    <Card.Footer className="d-flex justify-content-end">
+    <Card.Footer className="d-flex justify-content-between">
+      <Button variant="outline-primary" onClick={() => edit()}>
+        Изменить
+      </Button>
       <Button variant="outline-danger" onClick={() => $delete()}>
         Удалить
       </Button>

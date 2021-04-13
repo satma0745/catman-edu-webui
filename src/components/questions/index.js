@@ -1,3 +1,4 @@
+import EditQuestion from './EditQuestion'
 import ShowQuestion from './ShowQuestion'
 
-export { ShowQuestion }
+export { EditQuestion, ShowQuestion }

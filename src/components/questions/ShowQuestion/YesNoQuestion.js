@@ -1,10 +1,11 @@
 import Card from 'react-bootstrap/Card'
 import QuestionTemplate from './QuestionTemplate'
 
-const YesNoQuestion = ({ cost, text, correctAnswer, onDelete: $delete }) => (
+const YesNoQuestion = ({ cost, text, correctAnswer, onEdit: edit, onDelete: $delete }) => (
   <QuestionTemplate
     cost={cost}
     text={text}
+    onEdit={edit}
     onDelete={$delete}
     contentBackground={correctAnswer ? '#e0ffe8' : '#ffedf8'}
   >

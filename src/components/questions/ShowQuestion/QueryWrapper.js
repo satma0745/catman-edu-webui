@@ -1,10 +1,16 @@
 import { useDeleteMutation } from 'api/questions'
 import Question from './Presentation'
 
-const QueryWrapper = (question) => {
+const QueryWrapper = ({ onEdit: edit, ...question }) => {
   const { $delete } = useDeleteMutation()
 
-  return <Question question={question} onDelete={() => $delete(question.id)} />
+  return (
+    <Question
+      question={question}
+      onEdit={() => edit(question.id)}
+      onDelete={() => $delete(question.id)}
+    />
+  )
 }
 
 export default QueryWrapper
