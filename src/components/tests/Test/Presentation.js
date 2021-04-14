@@ -20,9 +20,7 @@ const Question = ({ status, question, onEdit: edit, ...props }) => {
 const Test = ({
   className,
   isLoading,
-  title,
-  discipline = {},
-  questions = [],
+  test: { title, discipline, questions } = { discipline: {}, questions: [] },
   onCancel: cancel,
   ...props
 }) => {

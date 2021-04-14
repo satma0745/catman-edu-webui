@@ -12,7 +12,9 @@ const QueryWrapper = ({ id, ...props }) => {
     },
   })
 
-  return <Test isLoading={isLoading} onCancel={() => history.push('/tests')} {...test} {...props} />
+  return (
+    <Test {...props} isLoading={isLoading} test={test} onCancel={() => history.push('/tests')} />
+  )
 }
 
 export default QueryWrapper
