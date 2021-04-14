@@ -5,8 +5,8 @@ import { NotFoundError, ValidationError } from 'api/common'
 
 const questionController = (questionType) => {
   switch (questionType) {
-    // case 'Choice':
-    //   return 'choiceQuestions'
+    case 'Choice':
+      return 'questions/choice'
     // case 'Order':
     //   return 'orderQuestions'
     case 'Value':
