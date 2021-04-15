@@ -10,9 +10,9 @@ const questionController = (questionType) => {
     // case 'Order':
     //   return 'orderQuestions'
     case 'Value':
-      return 'valueQuestions'
+      return 'questions/value'
     case 'YesNo':
-      return 'yesNoQuestions'
+      return 'questions/yesNo'
     default:
       throw new Error(`Unknown question type "${questionType}"`)
   }
