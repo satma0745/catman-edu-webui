@@ -7,8 +7,8 @@ const questionController = (questionType) => {
   switch (questionType) {
     case 'Choice':
       return 'questions/choice'
-    // case 'Order':
-    //   return 'orderQuestions'
+    case 'Order':
+      return 'questions/order'
     case 'Value':
       return 'questions/value'
     case 'YesNo':
