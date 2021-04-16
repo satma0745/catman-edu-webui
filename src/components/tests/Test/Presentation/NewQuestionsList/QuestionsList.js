@@ -22,6 +22,7 @@ const QuestionsList = ({ testId, ...props }) => {
           <ListGroup.Item key={question.id}>
             <AddQuestion
               question={question}
+              testId={testId}
               onCancel={() => remove(question.id)}
               onSave={() => remove(question.id)}
             />
