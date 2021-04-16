@@ -1,10 +1,11 @@
+import ChoiceQuestion from './ChoiceQuestion'
 import ValueQuestion from './ValueQuestion'
 import YesNoQuestion from './YesNoQuestion'
 
 const AddQuestion = ({ question, onCancel, onSave, ...props }) => {
   switch (question.type) {
     case 'Choice':
-      return <p>New choice question</p>
+      return <ChoiceQuestion {...props} onCancel={onCancel} onSave={onSave} />
     case 'Order':
       return <p>New order question</p>
     case 'Value':
