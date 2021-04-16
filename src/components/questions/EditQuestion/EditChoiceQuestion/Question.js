@@ -1,18 +1,16 @@
 import { FieldArray, useFormikContext } from 'formik'
 import { array, object } from 'yup'
 import { itemText } from 'validation/question'
-import EditQuestionTemplate from '../EditQuestionTemplate'
 
+import id from 'uniqid'
+
+import EditQuestionTemplate from '../EditQuestionTemplate'
 import AnswerOptions from './AnswerOptions'
 
 const AnswerOptionsFormikWrapper = () => {
   const { values } = useFormikContext()
 
-  const newAnswerOption = () => ({
-    id: `new-${values.answerOptions.length}th-answer-option`,
-    text: '',
-    isCorrect: false,
-  })
+  const newAnswerOption = () => ({ id: id(), text: '', isCorrect: false })
 
   return (
     <FieldArray

@@ -1,14 +1,16 @@
 import { FieldArray, useFormikContext } from 'formik'
 import { array, object } from 'yup'
 import { itemText } from 'validation/question'
-import EditQuestionTemplate from '../EditQuestionTemplate'
 
+import id from 'uniqid'
+
+import EditQuestionTemplate from '../EditQuestionTemplate'
 import OrderItems from './OrderItems'
 
 const OrderItemsFormikWrapper = () => {
   const { values } = useFormikContext()
 
-  const newOrderItem = () => ({ id: `new-${values.items.length}th-order-item`, text: '' })
+  const newOrderItem = () => ({ id: id(), text: '' })
 
   return (
     <FieldArray
