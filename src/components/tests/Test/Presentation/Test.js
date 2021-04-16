@@ -1,8 +1,6 @@
 import { useState } from 'react'
 
-import Button from 'react-bootstrap/Button'
 import { Loadable } from 'components/common'
-
 import Title from './Title'
 import QuestionsList from './QuestionsList'
 import NewQuestionsList from './NewQuestionsList'
@@ -14,7 +12,6 @@ const Test = ({
     discipline: {},
     questions: [],
   },
-  onCancel: cancel,
   ...props
 }) => {
   const [questionStatuses, setQuestionStatuses] = useState({})
@@ -35,12 +32,6 @@ const Test = ({
         />
 
         <NewQuestionsList testId={testId} />
-
-        <div className="d-flex justify-content-between">
-          <Button variant="outline-primary" onClick={() => cancel()}>
-            Назад
-          </Button>
-        </div>
       </div>
     </Loadable>
   )
