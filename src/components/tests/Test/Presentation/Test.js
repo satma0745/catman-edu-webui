@@ -22,7 +22,7 @@ const Test = ({
   return (
     <Loadable loaded={!isLoading}>
       <div className={`d-flex flex-column ${className}`} {...props}>
-        <Title title={title} discipline={discipline} />
+        <Title id={testId} title={title} discipline={discipline} />
 
         <QuestionsList
           className="my-4"
