@@ -14,7 +14,7 @@ const Question = ({ status, question, onEdit: edit, ...props }) => {
   }
 }
 
-const List = ({ questions, getStatus, setStatus, ...props }) => (
+const QuestionsList = ({ questions, getStatus, setStatus, ...props }) => (
   <ListGroup variant="flush" {...props}>
     {questions
       .sort((left, right) => left.cost - right.cost)
@@ -32,4 +32,4 @@ const List = ({ questions, getStatus, setStatus, ...props }) => (
   </ListGroup>
 )
 
-export default List
+export default QuestionsList
