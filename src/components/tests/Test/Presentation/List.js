@@ -1,8 +1,10 @@
 import ListGroup from 'react-bootstrap/ListGroup'
-import { EditQuestion, ShowQuestion } from 'components/questions'
+import { AddQuestion, EditQuestion, ShowQuestion } from 'components/questions'
 
 const Question = ({ status, question, onEdit: edit, ...props }) => {
   switch (status) {
+    case 'add':
+      return <AddQuestion {...props} question={question} />
     case 'edit':
       return <EditQuestion question={question} {...props} />
     case 'show':
