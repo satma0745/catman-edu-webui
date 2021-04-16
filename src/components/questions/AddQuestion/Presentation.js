@@ -1,4 +1,5 @@
 import ChoiceQuestion from './ChoiceQuestion'
+import OrderQuestion from './OrderQuestion'
 import ValueQuestion from './ValueQuestion'
 import YesNoQuestion from './YesNoQuestion'
 
@@ -7,7 +8,7 @@ const AddQuestion = ({ question, onCancel, onSave, ...props }) => {
     case 'Choice':
       return <ChoiceQuestion {...props} onCancel={onCancel} onSave={onSave} />
     case 'Order':
-      return <p>New order question</p>
+      return <OrderQuestion {...props} onCancel={onCancel} onSave={onSave} />
     case 'Value':
       return <ValueQuestion {...props} onCancel={onCancel} onSave={onSave} />
     case 'YesNo':
