@@ -1,4 +1,5 @@
 import ValueQuestion from './ValueQuestion'
+import YesNoQuestion from './YesNoQuestion'
 
 const AddQuestion = ({ question, onCancel, onSave, ...props }) => {
   switch (question.type) {
@@ -9,7 +10,7 @@ const AddQuestion = ({ question, onCancel, onSave, ...props }) => {
     case 'Value':
       return <ValueQuestion {...props} onCancel={onCancel} onSave={onSave} />
     case 'YesNo':
-      return <p>New yes/no question</p>
+      return <YesNoQuestion {...props} onCancel={onCancel} onSave={onSave} />
     default:
       throw new Error(`Unknown question type "${question.type}"`)
   }
