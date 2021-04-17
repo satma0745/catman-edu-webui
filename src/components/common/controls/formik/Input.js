@@ -1,7 +1,7 @@
 import { useField } from 'formik'
 import Form from 'react-bootstrap/Form'
 
-const Input = ({ className, label, ...props }) => {
+const Input = ({ className, label, validate = true, ...props }) => {
   const [field, meta] = useField(props)
 
   return (
@@ -10,10 +10,10 @@ const Input = ({ className, label, ...props }) => {
       <Form.Control
         {...field}
         {...props}
-        isValid={meta.touched && !meta.error}
-        isInvalid={meta.touched && meta.error}
+        isValid={validate && meta.touched && !meta.error}
+        isInvalid={validate && meta.touched && meta.error}
       />
-      <Form.Control.Feedback type="invalid">{meta.error}</Form.Control.Feedback>
+      {validate && <Form.Control.Feedback type="invalid">{meta.error}</Form.Control.Feedback>}
     </Form.Group>
   )
 }

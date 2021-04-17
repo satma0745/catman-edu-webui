@@ -1,3 +1,8 @@
+const valueQuestionInitialValues = (question) => ({
+  ...question,
+  givenAnswer: '',
+})
+
 const yesNoQuestionInitialValues = (question) => ({
   ...question,
   givenAnswer: false,
@@ -5,6 +10,8 @@ const yesNoQuestionInitialValues = (question) => ({
 
 const questionInitialValues = (question) => {
   switch (question.type) {
+    case 'Value':
+      return valueQuestionInitialValues(question)
     case 'YesNo':
       return yesNoQuestionInitialValues(question)
     default:
