@@ -1,3 +1,8 @@
+const choiceQuestionInitialValues = (question) => ({
+  ...question,
+  answerOptions: question.answerOptions.map((answer) => ({ ...answer, selected: false })),
+})
+
 const valueQuestionInitialValues = (question) => ({
   ...question,
   givenAnswer: '',
@@ -10,6 +15,8 @@ const yesNoQuestionInitialValues = (question) => ({
 
 const questionInitialValues = (question) => {
   switch (question.type) {
+    case 'Choice':
+      return choiceQuestionInitialValues(question)
     case 'Value':
       return valueQuestionInitialValues(question)
     case 'YesNo':

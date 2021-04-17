@@ -1,3 +1,4 @@
+import ChoiceQuestion from './ChoiceQuestion'
 import ValueQuestion from './ValueQuestion'
 import YesNoQuestion from './YesNoQuestion'
 
@@ -14,7 +15,7 @@ const QuestionTypeWrapper = ({ name, question, ...props }) => {
     case 'Value':
       return <ValueQuestion {...props} name={name} question={question} />
     case 'Choice':
-      return <QuestionDummy {...props} question={question} />
+      return <ChoiceQuestion {...props} name={name} question={question} />
     case 'Order':
       return <QuestionDummy {...props} question={question} />
     default:
