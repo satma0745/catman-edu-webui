@@ -11,7 +11,13 @@ const QueryWrapper = ({ testId, ...props }) => {
   })
 
   return (
-    <Test isLoading={isLoading} test={test} onCancel={() => history.push('/testing')} {...props} />
+    <Test
+      isLoading={isLoading}
+      test={test}
+      onCancel={() => history.push('/testing')}
+      onSubmit={(answeredTest) => console.log({ answeredTest })}
+      {...props}
+    />
   )
 }
 
