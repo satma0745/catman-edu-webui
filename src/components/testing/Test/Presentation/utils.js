@@ -3,6 +3,8 @@ const choiceQuestionInitialValues = (question) => ({
   answerOptions: question.answerOptions.map((answer) => ({ ...answer, selected: false })),
 })
 
+const orderQuestionInitialValues = (question) => question
+
 const valueQuestionInitialValues = (question) => ({
   ...question,
   givenAnswer: '',
@@ -17,12 +19,14 @@ const questionInitialValues = (question) => {
   switch (question.type) {
     case 'Choice':
       return choiceQuestionInitialValues(question)
+    case 'Order':
+      return orderQuestionInitialValues(question)
     case 'Value':
       return valueQuestionInitialValues(question)
     case 'YesNo':
       return yesNoQuestionInitialValues(question)
     default:
-      return question
+      throw new Error(`Unknown question type "${question.type}"`)
   }
 }
 

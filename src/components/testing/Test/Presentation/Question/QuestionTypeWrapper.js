@@ -1,12 +1,7 @@
 import ChoiceQuestion from './ChoiceQuestion'
+import OrderQuestion from './OrderQuestion'
 import ValueQuestion from './ValueQuestion'
 import YesNoQuestion from './YesNoQuestion'
-
-const QuestionDummy = ({ question: { type, cost, text }, ...props }) => (
-  <p {...props}>
-    &lt;{type}&gt; [{cost}] {text}
-  </p>
-)
 
 const QuestionTypeWrapper = ({ name, question, ...props }) => {
   switch (question.type) {
@@ -17,7 +12,7 @@ const QuestionTypeWrapper = ({ name, question, ...props }) => {
     case 'Choice':
       return <ChoiceQuestion {...props} name={name} question={question} />
     case 'Order':
-      return <QuestionDummy {...props} question={question} />
+      return <OrderQuestion {...props} name={name} question={question} />
     default:
       throw new Error(`Unknown question type "${question.type}"`)
   }
