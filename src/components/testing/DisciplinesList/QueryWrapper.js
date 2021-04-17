@@ -31,7 +31,7 @@ const QueryWrapper = (props) => {
       {...props}
       isLoading={!disciplinesLoaded}
       disciplines={disciplines}
-      onSelect={(disciplineId) => history.push(`/testing/${disciplineId}`)}
+      onSelect={(disciplineId) => history.push(`/testing/discipline/${disciplineId}`)}
     />
   )
 }

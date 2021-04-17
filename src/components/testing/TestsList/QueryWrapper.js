@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import { usePaginatedQuery as useTestsQuery } from 'api/tests'
 
 import TestsList from './Presentation'
 
 const QueryWrapper = ({ disciplineId, ...props }) => {
+  const history = useHistory()
+
   const [pageNumber, setPageNumber] = useState(1)
   const [pagesCount, setPagesCount] = useState(1)
 
@@ -24,6 +27,7 @@ const QueryWrapper = ({ disciplineId, ...props }) => {
       {...props}
       isLoading={isLoading}
       tests={tests}
+      onSelect={(testId) => history.push(`/testing/${testId}`)}
       pageNumber={pageNumber}
       pagesCount={pagesCount}
       onPageChange={setPageNumber}

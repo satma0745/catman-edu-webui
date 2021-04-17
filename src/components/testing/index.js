@@ -1,4 +1,5 @@
+import Test from './Test'
 import DisciplinesList from './DisciplinesList'
 import TestsList from './TestsList'
 
-export { DisciplinesList, TestsList }
+export { Test, DisciplinesList, TestsList }
