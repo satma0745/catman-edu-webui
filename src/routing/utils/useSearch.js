@@ -7,9 +7,21 @@ const deserialize = (searchString) => {
   return params
 }
 
+const isSignificant = (param) => {
+  if (param === null || param === undefined) {
+    return false
+  }
+
+  if (typeof param === 'string' && param.trim().length === 0) {
+    return false
+  }
+
+  return true
+}
+
 const significantParams = (params) =>
   Object.entries(params)
-    .filter(([_, value]) => value !== null && value !== undefined)
+    .filter(([_, value]) => isSignificant(value))
     .reduce((reduced, [name, value]) => ({ ...reduced, [name]: value }), {})
 
 const useSearch = () => {
