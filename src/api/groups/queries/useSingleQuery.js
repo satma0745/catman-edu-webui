@@ -6,16 +6,17 @@ const queryWrapper = ({ queryKey }) => {
   return getSingleCall(id)
 }
 
-const useSingleQuery = (id, { onNotFoundError }) => {
-  const { isLoading, data: group } = useQuery(['groups', id], queryWrapper, {
+const useSingleQuery = (id, { onNotFoundError, ...options }) => {
+  const { isSuccess, isLoading, data: group } = useQuery(['groups', id], queryWrapper, {
     onError: ({ notFound }) => {
       if (notFound) {
         onNotFoundError()
       }
     },
+    ...options,
   })
 
-  return { isLoading, group }
+  return { isSuccess, isLoading, group }
 }
 
 export default useSingleQuery
