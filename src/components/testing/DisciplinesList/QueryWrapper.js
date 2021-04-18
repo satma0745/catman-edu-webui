@@ -1,18 +1,15 @@
 import { useHistory } from 'react-router-dom'
 
-import { useAuth } from 'auth'
 import { useSingleQuery as useStudentQuery } from 'api/students'
 import { useSingleQuery as useGroupQuery } from 'api/groups'
 import { useFilteredQuery as useDisciplinesQuery } from 'api/disciplines'
 
 import DisciplinesList from './Presentation'
 
-const QueryWrapper = (props) => {
+const QueryWrapper = ({ studentId, onSelect, ...props }) => {
   const history = useHistory()
 
-  const [{ id: userId }] = useAuth()
-
-  const { isSuccess: studentLoaded, student } = useStudentQuery(userId, {
+  const { isSuccess: studentLoaded, student } = useStudentQuery(studentId, {
     onNotFoundError: () => history.push('/notfound'),
   })
 
@@ -31,7 +28,7 @@ const QueryWrapper = (props) => {
       {...props}
       isLoading={!disciplinesLoaded}
       disciplines={disciplines}
-      onSelect={(disciplineId) => history.push(`/testing/discipline/${disciplineId}`)}
+      onSelect={onSelect}
     />
   )
 }
