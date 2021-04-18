@@ -1,3 +1,4 @@
+import { useSubmitMutation } from './mutations'
 import { useTestQuery } from './queries'
 
-export { useTestQuery }
+export { useSubmitMutation, useTestQuery }
