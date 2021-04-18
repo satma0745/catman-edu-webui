@@ -6,7 +6,7 @@ import QuestionTemplate from './QuestionTemplate'
 const AnswerOptions = ({ questionName, answerOptions, ...props }) => (
   <ListGroup variant="flush" {...props}>
     {answerOptions.map(({ id, text }, index) => (
-      <ListGroup.Item key={id} className="px-0 py-4">
+      <ListGroup.Item key={id} className="px-4 py-3">
         <Checkbox
           className="mb-0"
           label={text}

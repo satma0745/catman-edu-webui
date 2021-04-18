@@ -5,10 +5,10 @@ import ListGroup from 'react-bootstrap/ListGroup'
 import QuestionTemplate from './QuestionTemplate'
 
 const OrderItem = ({ className, text, isFirst, isLast, moveUp, moveDown, ...props }) => (
-  <div className={`d-flex justify-content-between ${className}`} {...props}>
-    <p>{text}</p>
+  <div className={`d-flex justify-content-between align-items-center ${className}`} {...props}>
+    <p className="mb-0">{text}</p>
 
-    <ButtonGroup>
+    <ButtonGroup size="sm">
       <Button variant="outline-primary" disabled={isFirst} onClick={() => moveUp()}>
         ▲
       </Button>
@@ -22,7 +22,7 @@ const OrderItem = ({ className, text, isFirst, isLast, moveUp, moveDown, ...prop
 const OrderItems = ({ items, helpers: { move }, ...props }) => (
   <ListGroup variant="flush" {...props}>
     {items.map(({ id, text }, index) => (
-      <ListGroup.Item key={id} className="px-0 py-4">
+      <ListGroup.Item key={id} className="px-4 py-3">
         <OrderItem
           text={text}
           isLast={index === items.length - 1}

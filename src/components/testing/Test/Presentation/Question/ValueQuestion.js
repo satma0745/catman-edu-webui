@@ -3,7 +3,7 @@ import QuestionTemplate from './QuestionTemplate'
 
 const ValueQuestion = ({ name, question, ...props }) => (
   <QuestionTemplate {...props} question={question}>
-    <Input label="Ответ" name={`${name}.givenAnswer`} validate={false} />
+    <Input className="px-4 py-3 mb-0" label="Ответ" name={`${name}.givenAnswer`} validate={false} />
   </QuestionTemplate>
 )
 

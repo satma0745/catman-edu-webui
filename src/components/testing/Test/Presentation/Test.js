@@ -13,7 +13,7 @@ const Test = ({ isLoading, test = { questions: [] }, onCancel, onSubmit, ...prop
 
       <Formik initialValues={testInitialValues(test)} onSubmit={onSubmit}>
         <Form>
-          <QuestionsList />
+          <QuestionsList className="my-4" />
 
           <div className="d-flex justify-content-between">
             <Button variant="outline-primary" onClick={onCancel}>

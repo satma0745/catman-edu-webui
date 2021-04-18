@@ -3,7 +3,7 @@ import QuestionTemplate from './QuestionTemplate'
 
 const YesNoQuestion = ({ name, question, ...props }) => (
   <QuestionTemplate {...props} question={question}>
-    <Checkbox className="mb-0" label="Правильно" name={`${name}.givenAnswer`} />
+    <Checkbox className="px-4 py-3 mb-0" label="Правильно" name={`${name}.givenAnswer`} />
   </QuestionTemplate>
 )
 
