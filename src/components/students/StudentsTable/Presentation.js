@@ -9,6 +9,7 @@ const Presentation = ({
   pageNumber,
   pagesCount,
   onPageChange,
+  onTestingResults: testingResults,
   onEdit: edit,
   onDelete: $delete,
   ...props
@@ -29,6 +30,9 @@ const Presentation = ({
             <td className="align-middle">{group}</td>
             <td>
               <Form inline className="justify-content-around">
+                <Button variant="outline-secondary" onClick={() => testingResults(id)}>
+                  Успеваемость
+                </Button>
                 <Button variant="outline-primary" onClick={() => edit(id)}>
                   Изменить
                 </Button>

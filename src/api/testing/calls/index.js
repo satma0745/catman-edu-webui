@@ -1,4 +1,5 @@
+import getPaginatedResultsCall from './getPaginatedResultsCall'
 import getTestCall from './getTestCall'
 import submitCall from './submitCall'
 
-export { getTestCall, submitCall }
+export { getPaginatedResultsCall, getTestCall, submitCall }

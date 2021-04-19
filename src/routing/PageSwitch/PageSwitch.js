@@ -1,13 +1,14 @@
 import { Switch } from 'react-router-dom'
 import { PublicRoute, PrivateRoute } from 'routing/routes'
 
-import { HomePage, NotFoundPage, SignInPage, TestingResultsPage } from 'pages'
+import { HomePage, NotFoundPage, SignInPage } from 'pages'
 
 import AdminsSwitch from './AdminsSwitch'
 import DisciplinesSwitch from './DisciplinesSwitch'
 import GroupsSwitch from './GroupsSwitch'
 import StudentsSwitch from './StudentsSwitch'
 import TestingSwitch from './TestingSwitch'
+import TestingResultsSwitch from './TestingResultsSwitch'
 import TestsSwitch from './TestsSwitch'
 
 const PageSwitch = () => (
@@ -15,7 +16,7 @@ const PageSwitch = () => (
     <PublicRoute unsignedOnly exact path="/" render={SignInPage} />
 
     <PrivateRoute path="/home" render={HomePage} />
-    <PrivateRoute path="/testingResults" render={TestingResultsPage} />
+    <PrivateRoute path="/testing/results" render={TestingResultsSwitch} />
 
     <PrivateRoute adminOnly path="/admins" render={AdminsSwitch} />
     <PrivateRoute adminOnly path="/students" render={StudentsSwitch} />

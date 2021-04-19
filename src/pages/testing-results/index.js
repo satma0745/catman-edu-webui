@@ -1,0 +1,4 @@
+import TestingResultsStudentDisciplinePage from './TestingResultsStudentDisciplinePage'
+import TestingResultsStudentDisciplinesPage from './TestingResultsStudentDisciplinesPage'
+
+export { TestingResultsStudentDisciplinePage, TestingResultsStudentDisciplinesPage }

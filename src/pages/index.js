@@ -6,7 +6,6 @@ import NotFoundPage from './NotFoundPage'
 import SignInPage from './SignInPage'
 import { EditStudentPage, RegisterStudentPage, StudentsPage } from './students'
 import { TestingDisciplinesPage, TestsListPage } from './testing'
-import TestingResultsPage from './TestingResultsPage'
 import { AddTestPage, TestPage, TestsPage } from './tests'
 
 export {
@@ -27,7 +26,6 @@ export {
   StudentsPage,
   TestingDisciplinesPage,
   TestsListPage,
-  TestingResultsPage,
   AddTestPage,
   TestPage,
   TestsPage,

@@ -23,7 +23,9 @@ const QueryWrapper = ({ filter, ...props }) => {
   const { $delete } = useDeleteMutation()
 
   useEffect(() => {
-    if (paginationInfo) setPagesCount(paginationInfo.pagesCount)
+    if (paginationInfo) {
+      setPagesCount(paginationInfo.pagesCount)
+    }
   }, [paginationInfo, setPagesCount])
 
   return (
@@ -34,6 +36,7 @@ const QueryWrapper = ({ filter, ...props }) => {
         pageNumber={pageNumber}
         pagesCount={pagesCount}
         onPageChange={setPageNumber}
+        onTestingResults={(id) => history.push(`/testing/results/student/${id}`)}
         onEdit={(id) => history.push(`/students/edit/${id}`)}
         onDelete={$delete}
       />

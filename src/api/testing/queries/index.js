@@ -1,3 +1,4 @@
+import usePaginatedResultsQuery from './usePaginatedResultsQuery'
 import useTestQuery from './useTestQuery'
 
-export { useTestQuery }
+export { usePaginatedResultsQuery, useTestQuery }
