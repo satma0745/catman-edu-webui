@@ -8,7 +8,7 @@ const queryWrapper = ({ queryKey }) => {
 
 const usePaginatedResultsQuery = ({ page, pageSize }, filter) => {
   const { isLoading, data: { results, paginationInfo } = {} } = useQuery(
-    ['testing', { page, pageSize }, filter],
+    ['testing-results', { page, pageSize }, filter],
     queryWrapper,
     { keepPreviousData: true }
   )

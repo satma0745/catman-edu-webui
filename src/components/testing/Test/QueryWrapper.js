@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom'
+import { useAuth } from 'auth'
 import { useSubmitMutation, useTestQuery } from 'api/testing'
 
 import Test from './Presentation'
@@ -6,13 +7,14 @@ import { prepareTestForSubmition } from './utils'
 
 const QueryWrapper = ({ testId, ...props }) => {
   const history = useHistory()
+  const [userInfo] = useAuth()
 
   const { isLoading, test } = useTestQuery(testId, {
     onNotFoundError: () => history.push('/notfound'),
   })
 
   const { submit } = useSubmitMutation({
-    onSuccess: (result) => console.log({ result }),
+    onSuccess: () => history.push(`/testing/results/student/${userInfo.id}/${testId}`),
     onNotFoundError: () => history.push('/notfound'),
   })
 
@@ -23,8 +25,6 @@ const QueryWrapper = ({ testId, ...props }) => {
       onCancel={() => history.push('/testing')}
       onSubmit={(answeredTest) => {
         const preparedTest = prepareTestForSubmition(answeredTest)
-        console.log({ answeredTest, preparedTest })
-
         submit({ testId: answeredTest.testId, test: preparedTest })
       }}
       {...props}

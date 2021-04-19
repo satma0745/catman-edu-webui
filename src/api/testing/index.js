@@ -1,4 +1,4 @@
 import { useSubmitMutation } from './mutations'
-import { usePaginatedResultsQuery, useTestQuery } from './queries'
+import { usePaginatedResultsQuery, useSingleResultQuery, useTestQuery } from './queries'
 
-export { useSubmitMutation, usePaginatedResultsQuery, useTestQuery }
+export { useSubmitMutation, usePaginatedResultsQuery, useSingleResultQuery, useTestQuery }

@@ -7,6 +7,7 @@ const TestingResults = ({
   pageNumber,
   pagesCount,
   onPageChange,
+  onDetails: details,
   ...props
 }) => (
   <Loadable loaded={!isLoading}>
@@ -21,7 +22,7 @@ const TestingResults = ({
         </thead>
         <tbody>
           {results.map(({ studentId, testId, testTitle, actualScore, maxScore }) => (
-            <tr key={`${studentId}-${testId}`}>
+            <tr key={`${studentId}-${testId}`} onClick={() => details({ studentId, testId })}>
               <td className="align-middle">{testTitle}</td>
               <td className="align-middle">
                 {actualScore} / {maxScore}

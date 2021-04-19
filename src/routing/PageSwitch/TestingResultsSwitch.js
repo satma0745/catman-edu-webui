@@ -4,6 +4,7 @@ import { PrivateRoute } from 'routing/routes'
 import {
   TestingResultsStudentDisciplinePage,
   TestingResultsStudentDisciplinesPage,
+  TestingResultStudentTestPage,
 } from 'pages/testing-results'
 
 const TestingResultsSwitch = () => {
@@ -11,6 +12,10 @@ const TestingResultsSwitch = () => {
 
   return (
     <Switch>
+      <PrivateRoute
+        path={`${path}/student/:studentId/:testId`}
+        render={TestingResultStudentTestPage}
+      />
       <PrivateRoute
         path={`${path}/student/:studentId`}
         render={TestingResultsStudentDisciplinesPage}

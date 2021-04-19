@@ -7,7 +7,7 @@ const queryWrapper = ({ queryKey }) => {
 }
 
 const useSingleQuery = (id, { onNotFoundError }) => {
-  const { isLoading, data: test } = useQuery(['tests', id], queryWrapper, {
+  const { isSuccess, isLoading, data: test } = useQuery(['tests', id], queryWrapper, {
     onError: ({ notFound }) => {
       if (notFound) {
         onNotFoundError()
@@ -15,7 +15,7 @@ const useSingleQuery = (id, { onNotFoundError }) => {
     },
   })
 
-  return { isLoading, test }
+  return { isSuccess, isLoading, test }
 }
 
 export default useSingleQuery
