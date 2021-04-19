@@ -1,5 +1,6 @@
-import { useHistory } from 'react-router-dom'
+import { Redirect, useHistory } from 'react-router-dom'
 import { useSearch } from 'routing/utils'
+import { useAuth } from 'auth'
 
 import { useSingleQuery as useStudentQuery } from 'api/students'
 import { useSingleQuery as useGroupQuery } from 'api/groups'
@@ -51,4 +52,15 @@ const StudentDisciplinePage = () => {
   )
 }
 
-export default StudentDisciplinePage
+const AccessCheckWrapper = () => {
+  const [{ studentId }] = useSearch()
+  const [userInfo] = useAuth()
+
+  return userInfo.role === 'Admin' || userInfo.id === studentId ? (
+    <StudentDisciplinePage />
+  ) : (
+    <Redirect to="/home" />
+  )
+}
+
+export default AccessCheckWrapper

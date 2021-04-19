@@ -1,4 +1,6 @@
-import { useHistory, useParams } from 'react-router-dom'
+import { Redirect, useHistory, useParams } from 'react-router-dom'
+import { useAuth } from 'auth'
+
 import { DisciplinesList } from 'components/testing'
 
 const StudentDisciplinesPage = () => {
@@ -20,4 +22,15 @@ const StudentDisciplinesPage = () => {
   )
 }
 
-export default StudentDisciplinesPage
+const AccessCheckWrapper = () => {
+  const { studentId } = useParams()
+  const [userInfo] = useAuth()
+
+  return userInfo.role === 'Admin' || userInfo.id === studentId ? (
+    <StudentDisciplinesPage />
+  ) : (
+    <Redirect to="/home" />
+  )
+}
+
+export default AccessCheckWrapper
