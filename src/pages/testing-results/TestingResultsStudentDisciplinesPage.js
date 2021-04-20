@@ -1,7 +1,7 @@
 import { Redirect, useHistory, useParams } from 'react-router-dom'
 import { useAuth } from 'auth'
 
-import { DisciplinesList } from 'components/testing'
+import { DisciplinesList } from 'components/testing-results'
 
 const StudentDisciplinesPage = () => {
   const history = useHistory()
