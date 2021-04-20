@@ -5,7 +5,7 @@ import { useAuth } from 'auth'
 
 const UnsignedLinks = () => <Nav className="mr-auto" />
 
-const StudentLinks = () => (
+const StudentLinks = ({ student }) => (
   <Nav className="mr-auto">
     <Nav.Link as={Link} to="/home">
       Главная
@@ -13,7 +13,7 @@ const StudentLinks = () => (
     <Nav.Link as={Link} to="/testing">
       Тестирование
     </Nav.Link>
-    <Nav.Link as={Link} to="/testingResults">
+    <Nav.Link as={Link} to={`/testing/results/student/${student.id}`}>
       Результаты тестирования
     </Nav.Link>
   </Nav>
@@ -50,7 +50,7 @@ const NavigationLinks = () => {
 
   if (!userInfo) return <UnsignedLinks />
 
-  if (userInfo.role === 'Student') return <StudentLinks />
+  if (userInfo.role === 'Student') return <StudentLinks student={userInfo} />
 
   if (userInfo.role === 'Admin') return <AdminLinks />
 
