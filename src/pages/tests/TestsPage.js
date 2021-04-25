@@ -18,7 +18,10 @@ const TestsPage = () => {
       <TestsTable className="my-4" filter={filter} />
 
       <div className="d-flex justify-content-center">
-        <Button variant="primary" onClick={() => history.push('/tests/add')}>
+        <Button
+          variant="primary"
+          onClick={() => history.push(`/tests/add?${new URLSearchParams(filter)}`)}
+        >
           Добавить тест
         </Button>
       </div>

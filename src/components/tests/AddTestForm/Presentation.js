@@ -7,18 +7,27 @@ import { Loadable } from 'components/common'
 
 import { title } from 'validation/test'
 
-const initialValues = { title: '', grade: '' }
-
 const schema = object().shape({
   title: title().required('Укажите название теста'),
   disciplineId: string().required('Укажите дисциплину'),
 })
 
-const AddTestForm = ({ isLoading, disciplines = {}, onCancel: cancel, onSubmit, ...props }) => (
+const AddTestForm = ({
+  isLoading,
+  defaults: { disciplineId: defaultDisciplineId } = {},
+  disciplines = {},
+  onCancel: cancel,
+  onSubmit,
+  ...props
+}) => (
   <Loadable loaded={!isLoading}>
     <div {...props}>
       <h2 className="mb-5">Добавление теста</h2>
-      <Formik initialValues={initialValues} validationSchema={schema} onSubmit={onSubmit}>
+      <Formik
+        initialValues={{ title: '', disciplineId: defaultDisciplineId ?? '' }}
+        validationSchema={schema}
+        onSubmit={onSubmit}
+      >
         <Form>
           <Input className="my-4" label="Название теста" name="title" />
           <Dropdown className="my-4" label="Дисциплина" name="disciplineId" items={disciplines} />

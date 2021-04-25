@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom'
 
 import AddTestForm from './Presentation'
 
-const QueryWrapper = () => {
+const QueryWrapper = ({ defaults, ...props }) => {
   const history = useHistory()
 
   const { isLoading, disciplines: rawDisciplines } = useDisciplinesQuery()
@@ -27,7 +27,9 @@ const QueryWrapper = () => {
 
   return (
     <AddTestForm
+      {...props}
       isLoading={isLoading}
+      defaults={defaults}
       disciplines={disciplines()}
       onCancel={() => history.push('/tests')}
       onSubmit={onAdd}
