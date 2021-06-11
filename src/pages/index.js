@@ -1,7 +1,6 @@
 import { AdminsPage, EditAdminPage, RegisterAdminPage } from './admins'
 import { AddDisciplinePage, DisciplinesPage, EditDisciplinePage } from './disciplines'
 import { AddGroupPage, EditGroupPage, GroupsPage } from './groups'
-import HomePage from './HomePage'
 import NotFoundPage from './NotFoundPage'
 import SignInPage from './SignInPage'
 import { EditStudentPage, RegisterStudentPage, StudentsPage } from './students'
@@ -19,7 +18,6 @@ export {
   EditGroupPage,
   EditStudentPage,
   GroupsPage,
-  HomePage,
   NotFoundPage,
   SignInPage,
   RegisterStudentPage,

@@ -7,9 +7,6 @@ const UnsignedLinks = () => <Nav className="mr-auto" />
 
 const StudentLinks = ({ student }) => (
   <Nav className="mr-auto">
-    <Nav.Link as={Link} to="/home">
-      Главная
-    </Nav.Link>
     <Nav.Link as={Link} to="/testing">
       Тестирование
     </Nav.Link>
@@ -21,9 +18,6 @@ const StudentLinks = ({ student }) => (
 
 const AdminLinks = () => (
   <Nav className="mr-auto">
-    <Nav.Link as={Link} to="/home">
-      Главная
-    </Nav.Link>
     <Nav.Link as={Link} to="/students">
       Студенты
     </Nav.Link>
