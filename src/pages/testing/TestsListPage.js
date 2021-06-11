@@ -17,7 +17,7 @@ const TestsListPage = () => {
     <>
       <Loadable loaded={!isLoading}>
         <h1>
-          Тесты по дисциплине &quot;{discipline?.title} ({discipline?.grade}й класс)&quot;
+          Тесты по дисциплине &quot;{discipline?.title} ({discipline?.grade}й год обучения)&quot;
         </h1>
       </Loadable>
 

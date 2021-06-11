@@ -21,7 +21,7 @@ const TestsTable = ({
           <tr>
             <th>Название</th>
             <th>Дисциплина</th>
-            <th>Класс</th>
+            <th>Год обучения</th>
             <th>Операции</th>
           </tr>
         </thead>

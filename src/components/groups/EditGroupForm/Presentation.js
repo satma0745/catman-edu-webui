@@ -7,16 +7,16 @@ import { Input } from 'components/common/controls/formik'
 import { grade, title } from 'validation/group'
 
 const schema = object().shape({
-  title: title().required('Введите название класса'),
+  title: title().required('Введите название группы'),
   grade: grade().required('Укажите год обучения'),
 })
 
 const EditGroupForm = ({ initialValues, onCancel: cancel, onSubmit, ...props }) => (
   <div {...props}>
-    <h2 className="mb-5">Редактирование класса</h2>
+    <h2 className="mb-5">Редактирование группы</h2>
     <Formik initialValues={initialValues} validationSchema={schema} onSubmit={onSubmit}>
       <Form>
-        <Input className="my-4" label="Название класса" name="title" />
+        <Input className="my-4" label="Название группы" name="title" />
         <Input className="my-4" label="Год обучения" name="grade" />
 
         <div className="d-flex justify-content-between mt-5">

@@ -31,12 +31,12 @@ const StudentDisciplinePage = () => {
     <>
       <Loadable loaded={studentLoaded && groupLoaded}>
         <h1>
-          Успеваемость студента {student?.fullName} ({group?.title} класс)
+          Успеваемость учащегося {student?.fullName} ({group?.title})
         </h1>
       </Loadable>
       <Loadable loaded={disciplineLoaded}>
         <h3>
-          По дисциплине &quot;{discipline?.title} ({discipline?.grade}й класс)&quot;
+          По дисциплине &quot;{discipline?.title} ({discipline?.grade}й год обучения)&quot;
         </h3>
       </Loadable>
 

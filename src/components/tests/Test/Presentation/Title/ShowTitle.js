@@ -5,7 +5,7 @@ const ShowTitle = ({ title, discipline, onEdit: edit, ...props }) => (
     <h2>Тест &quot;{title}&quot;</h2>
 
     <h4>
-      По дисциплине &quot;{discipline.title}&quot; ({discipline.grade}й класс)
+      По дисциплине &quot;{discipline.title}&quot; ({discipline.grade}й год обучения)
     </h4>
 
     <div className="d-flex justify-content-end">

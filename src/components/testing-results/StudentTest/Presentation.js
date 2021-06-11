@@ -14,13 +14,13 @@ const StudentTest = ({
   <div {...props}>
     <Loadable loaded={studentLoaded && groupLoaded}>
       <p>
-        Студент: {student.fullName} ({group.title} класс)
+        Учащийся: {student.fullName} ({group.title})
       </p>
     </Loadable>
 
     <Loadable loaded={disciplineLoaded}>
       <p>
-        Дисциплина: &quot;{discipline.title} ({discipline.grade}й класс)&quot;
+        Дисциплина: &quot;{discipline.title} ({discipline.grade}й год обучения)&quot;
       </p>
     </Loadable>
 

@@ -8,7 +8,7 @@ import { grade, title } from 'validation/discipline'
 
 const schema = object().shape({
   title: title().required('Введите название дисциплины'),
-  grade: grade().required('Укажите номер класса'),
+  grade: grade().required('Укажите год обучения'),
 })
 
 const AddDisciplineForm = ({ defaultGrade, onCancel: cancel, onSubmit, ...props }) => (
@@ -21,7 +21,7 @@ const AddDisciplineForm = ({ defaultGrade, onCancel: cancel, onSubmit, ...props 
     >
       <Form>
         <Input className="my-4" label="Название дисциплины" name="title" />
-        <Input className="my-4" label="Номер класса" name="grade" />
+        <Input className="my-4" label="Год обучения" name="grade" />
 
         <div className="d-flex justify-content-between mt-5">
           <Button onClick={() => cancel()} variant="outline-primary">

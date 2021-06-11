@@ -5,18 +5,18 @@ import Button from 'react-bootstrap/Button'
 import { Dropdown } from 'components/common/controls'
 
 const grades = [
-  'Все классы',
-  '1й класс',
-  '2й класс',
-  '3й класс',
-  '4й класс',
-  '5й класс',
-  '6й класс',
-  '7й класс',
-  '8й класс',
-  '9й класс',
-  '10й класс',
-  '11й класс',
+  'Любой год обучения',
+  '1й год обучения',
+  '2й год обучения',
+  '3й год обучения',
+  '4й год обучения',
+  '5й год обучения',
+  '6й год обучения',
+  '7й год обучения',
+  '8й год обучения',
+  '9й год обучения',
+  '10й год обучения',
+  '11й год обучения',
 ]
 
 const DisciplinesFilter = ({ initials, onApply }) => {
@@ -28,7 +28,7 @@ const DisciplinesFilter = ({ initials, onApply }) => {
       <Dropdown
         className="mr-2"
         variant="outline-primary"
-        title="Выберите класс"
+        title="Выберите год обучения"
         items={grades}
         initialValue={initials.grade}
         onSelect={(selectedGrade) => setGrade(selectedGrade || undefined)}

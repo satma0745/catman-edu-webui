@@ -19,7 +19,7 @@ const StudentLinks = ({ student }) => (
 const AdminLinks = () => (
   <Nav className="mr-auto">
     <Nav.Link as={Link} to="/students">
-      Студенты
+      Учащиеся
     </Nav.Link>
     <Nav.Link as={Link} to="/disciplines">
       Дисциплины
@@ -34,7 +34,7 @@ const AdminLinks = () => (
       Результаты тестирования
     </Nav.Link>
     <Nav.Link as={Link} to="/admins">
-      Админы
+      Администраторы
     </Nav.Link>
   </Nav>
 )

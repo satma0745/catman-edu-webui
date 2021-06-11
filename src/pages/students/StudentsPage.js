@@ -20,14 +20,14 @@ const StudentsPage = () => {
 
   return (
     <>
-      <h1>Страница управления студентами</h1>
+      <h1>Страница управления учащимися</h1>
 
       <StudentsFilter className="my-4" initials={filter} onApply={setFilter} />
 
       <StudentsTable className="my-4" filter={filter} />
 
       <div className="d-flex justify-content-center">
-        <Button onClick={onRegisterClick}>Зарегистрировать нового студента</Button>
+        <Button onClick={onRegisterClick}>Зарегистрировать нового учащегося</Button>
       </div>
     </>
   )

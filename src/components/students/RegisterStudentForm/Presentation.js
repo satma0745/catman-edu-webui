@@ -13,8 +13,8 @@ import './index.css'
 const schema = object().shape({
   username: username().required('Укажите имя пользователя'),
   password: password().required('Укажите пароль пользователя'),
-  fullName: fullName().required('Укажите ФИО студента'),
-  groupId: string().required('Укажите класс'),
+  fullName: fullName().required('Укажите ФИО учащегося'),
+  groupId: string().required('Укажите группу'),
 })
 
 const RegisterStudentForm = ({
@@ -27,7 +27,7 @@ const RegisterStudentForm = ({
 }) => (
   <Loadable loaded={!isLoading}>
     <div {...props}>
-      <h2 className="mb-5">Регистрация студента</h2>
+      <h2 className="mb-5">Регистрация учащегося</h2>
       <Formik
         initialValues={{ username: '', password: '', fullName: '', groupId: defaultGroupId ?? '' }}
         validationSchema={schema}
@@ -36,8 +36,8 @@ const RegisterStudentForm = ({
         <Form>
           <Input className="my-4" label="Имя пользователя" name="username" />
           <PasswordInput className="my-4" label="Пароль пользователя" name="password" />
-          <Input className="my-4" label="ФИО студента" name="fullName" />
-          <Dropdown className="my-4" items={groups} label="Класс" name="groupId" />
+          <Input className="my-4" label="ФИО учащегося" name="fullName" />
+          <Dropdown className="my-4" items={groups} label="Группа" name="groupId" />
 
           <div className="d-flex justify-content-between mt-5">
             <Button onClick={() => cancel()} variant="outline-primary">

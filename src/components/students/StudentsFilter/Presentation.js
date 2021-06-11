@@ -24,7 +24,7 @@ const StudentsFilter = ({ isLoading, initials, groups, onApply, ...props }) => {
         <Dropdown
           className="mr-2"
           variant="outline-primary"
-          title="Выберите класс"
+          title="Выберите группу"
           items={groups}
           initialValue={initials.groupId}
           onSelect={onGroupSelect}
@@ -33,7 +33,7 @@ const StudentsFilter = ({ isLoading, initials, groups, onApply, ...props }) => {
         <Form.Control
           className="mr-2 flex-grow-1"
           type="text"
-          placeholder="ФИО студента"
+          placeholder="ФИО учащегося"
           defaultValue={initials.fullName}
           onChange={(event) => setFullName(event.target.value)}
         />

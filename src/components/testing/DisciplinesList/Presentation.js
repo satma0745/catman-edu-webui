@@ -7,7 +7,7 @@ const Discipline = ({ title, grade, onSelect, ...props }) => (
   <Card {...props}>
     <Card.Body>
       <Card.Title>{title}</Card.Title>
-      <Card.Subtitle className="text-muted">{grade}й класс</Card.Subtitle>
+      <Card.Subtitle className="text-muted">{grade}й год обучения</Card.Subtitle>
 
       <div className="mt-3 d-flex justify-content-end">
         <Button variant="outline-primary" size="sm" onClick={onSelect}>

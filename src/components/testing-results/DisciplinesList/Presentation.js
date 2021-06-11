@@ -19,7 +19,7 @@ const Discipline = ({
     <Card {...props}>
       <Card.Body>
         <Card.Title>{title}</Card.Title>
-        <Card.Subtitle className="text-muted">{grade}й класс</Card.Subtitle>
+        <Card.Subtitle className="text-muted">{grade}й год обучения</Card.Subtitle>
 
         <div className="my-3">
           <p className="mb-0">Пройденно тестов: {prettyCoverage}</p>

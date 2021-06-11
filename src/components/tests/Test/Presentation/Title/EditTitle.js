@@ -16,7 +16,7 @@ const EditTitle = ({ title: initialTitle, discipline, onSave, ...props }) => (
       <Input label="Название теста" name="title" />
 
       <h4>
-        По дисциплине &quot;{discipline.title}&quot; ({discipline.grade}й класс)
+        По дисциплине &quot;{discipline.title}&quot; ({discipline.grade}й год обучения)
       </h4>
 
       <div className="d-flex justify-content-end">

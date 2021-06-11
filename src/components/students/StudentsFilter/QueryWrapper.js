@@ -6,7 +6,7 @@ const QueryWrapper = ({ initials, onApply, ...props }) => {
 
   const selectableGroups = () =>
     groups?.reduce((selectables, { id, title }) => ({ ...selectables, [id]: title }), {
-      any: 'Все классы',
+      any: 'Все группы',
     })
 
   return (

@@ -13,7 +13,7 @@ const Presentation = ({
   <Table {...props} className={`mb-0 ${className}`} striped bordered hover>
     <thead>
       <tr>
-        <th>Название класса</th>
+        <th>Название группы</th>
         <th>Год обучения</th>
         <th>Операции</th>
       </tr>
@@ -26,7 +26,7 @@ const Presentation = ({
           <td>
             <Form inline className="justify-content-around">
               <Button variant="outline-secondary" onClick={() => students(id)}>
-                Студенты
+                Учащиеся
               </Button>
               <Button variant="outline-primary" onClick={() => edit(id)}>
                 Изменить

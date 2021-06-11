@@ -13,7 +13,7 @@ const QueryWrapper = ({ defaults, ...props }) => {
     rawDisciplines?.reduce(
       (selectables, { id, title, grade }) => ({
         ...selectables,
-        [id]: `${title} (${grade}й класс)`,
+        [id]: `${title} (${grade}й год обучения)`,
       }),
       {
         any: 'Все дисциплины',

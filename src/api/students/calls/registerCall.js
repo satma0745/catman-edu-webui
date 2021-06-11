@@ -17,7 +17,7 @@ const registerCall = async ({ username, password, fullName, groupId }) => {
     }
 
     if (error.response?.status === 404) {
-      throw new ValidationError({ groupId: 'Такого класса не существует' })
+      throw new ValidationError({ groupId: 'Такой группы не существует' })
     }
 
     throw error

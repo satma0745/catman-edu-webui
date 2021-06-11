@@ -19,7 +19,7 @@ const Presentation = ({
       <thead>
         <tr>
           <th>Имя</th>
-          <th>Класс</th>
+          <th>Группа</th>
           <th>Операции</th>
         </tr>
       </thead>
