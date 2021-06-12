@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const getPaginatedCall = async ({ page, pageSize }) => {
-  const response = await axios.get('/users', { params: { page, pageSize, role: 'Admin' } })
+  const response = await axios.get('/admins', { params: { page, pageSize } })
   const { resource } = response.data
 
   const admins = resource.items

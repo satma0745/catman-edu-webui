@@ -3,7 +3,7 @@ import { NotFoundError } from 'api/common'
 
 const getSingleCall = async (id) => {
   try {
-    const response = await axios.get(`/students/${id}`)
+    const response = await axios.get(`/users/${id}`)
     return response.data.resource
   } catch (error) {
     if (error?.response?.status === 404) {
