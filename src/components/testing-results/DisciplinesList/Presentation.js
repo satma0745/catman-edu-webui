@@ -8,7 +8,7 @@ const isPresent = (value) => value !== null && value !== undefined
 const Discipline = ({
   title,
   grade,
-  performance: { testCoverage, averageAccuracy },
+  performance: { testCoverage, averageAccuracy } = {},
   onSelect,
   ...props
 }) => {

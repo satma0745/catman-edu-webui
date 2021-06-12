@@ -30,9 +30,6 @@ const AdminLinks = () => (
     <Nav.Link as={Link} to="/tests">
       Тесты
     </Nav.Link>
-    <Nav.Link as={Link} to="/testingResults">
-      Результаты тестирования
-    </Nav.Link>
     <Nav.Link as={Link} to="/admins">
       Администраторы
     </Nav.Link>
