@@ -19,13 +19,15 @@ const AdminsTable = ({
       <Table {...props} striped bordered hover>
         <thead>
           <tr>
+            <th>ФИО администратора</th>
             <th>Имя пользователя</th>
             <th>Операции</th>
           </tr>
         </thead>
         <tbody>
-          {admins.map(({ id, username }) => (
+          {admins.map(({ id, fullName, username }) => (
             <tr key={id}>
+              <td className="align-middle">{fullName}</td>
               <td className="align-middle">{username}</td>
               <td>
                 <Form inline className="justify-content-around">

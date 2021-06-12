@@ -1,4 +1,5 @@
 import password from './password'
 import username from './username'
+import fullName from './fullName'
 
-export { password, username }
+export { password, username, fullName }

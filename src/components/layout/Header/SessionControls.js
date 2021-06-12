@@ -32,7 +32,7 @@ const SessionControls = () => {
   }
 
   return userInfo ? (
-    <SignedControls username={userInfo.username} signOut={signOut} />
+    <SignedControls username={userInfo.fullName} signOut={signOut} />
   ) : (
     <UnsignedControls />
   )

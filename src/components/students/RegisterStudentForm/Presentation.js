@@ -3,8 +3,7 @@ import Button from 'react-bootstrap/Button'
 import { Dropdown, Input, PasswordInput } from 'components/common/controls/formik'
 
 import { object, string } from 'yup'
-import { password, username } from 'validation/user'
-import { fullName } from 'validation/student'
+import { password, username, fullName } from 'validation/user'
 
 import { Loadable } from 'components/common'
 

@@ -8,8 +8,8 @@ const QueryWrapper = () => {
 
   const { register } = useRegisterMutation({ onSuccess: () => history.push('/admins') })
 
-  const onSubmit = (student, { setErrors }) => {
-    register(student, { onValidationError: setErrors })
+  const onSubmit = (admin, { setErrors }) => {
+    register(admin, { onValidationError: setErrors })
   }
 
   return <RegisterAdminForm onCancel={() => history.push('/admins')} onSubmit={onSubmit} />
