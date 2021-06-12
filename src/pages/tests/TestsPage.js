@@ -11,7 +11,7 @@ const TestsPage = () => {
 
   return (
     <>
-      <h1>Страница управления тестами</h1>
+      <h1>Управление тестами</h1>
 
       <TestsFilter className="my-4" initials={filter} onApply={setFilter} />
 

@@ -8,7 +8,7 @@ const AdminsPage = () => {
 
   return (
     <>
-      <h1>Страница управления администраторами</h1>
+      <h1>Управление администраторами</h1>
       <AdminsTable className="my-4" />
       <div className="d-flex justify-content-center">
         <Button onClick={() => history.push('admins/register')}>

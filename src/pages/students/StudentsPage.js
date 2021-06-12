@@ -20,7 +20,7 @@ const StudentsPage = () => {
 
   return (
     <>
-      <h1>Страница управления учащимися</h1>
+      <h1>Управление учащимися</h1>
 
       <StudentsFilter className="my-4" initials={filter} onApply={setFilter} />
 

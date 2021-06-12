@@ -14,7 +14,7 @@ const schema = object().shape({
 
 const RegisterAdminForm = ({ onCancel: cancel, onSubmit, ...props }) => (
   <div {...props}>
-    <h2 className="mb-5">Регистрация учащегося</h2>
+    <h2 className="mb-5">Регистрация администратора</h2>
     <Formik initialValues={initialValues} validationSchema={schema} onSubmit={onSubmit}>
       <Form>
         <Input className="my-4" label="Имя пользователя" name="username" />

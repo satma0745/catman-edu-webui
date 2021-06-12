@@ -9,7 +9,7 @@ const TestingDisciplinesPage = () => {
 
   return (
     <>
-      <h1>Страница тестирования - Выбор дисциплины</h1>
+      <h1>Тестирование - Выбор дисциплины</h1>
       <DisciplinesList
         className="my-4"
         studentId={userInfo.id}

@@ -17,7 +17,7 @@ const schema = object().shape({
 const EditStudentForm = ({ isLoading, initialValues, onCancel: cancel, onSubmit, ...props }) => (
   <Loadable loaded={!isLoading}>
     <div {...props}>
-      <h2 className="mb-5">Регистрация учащегося</h2>
+      <h2 className="mb-5">Редактирование аккаунта учащегося</h2>
       <Formik initialValues={initialValues} validationSchema={schema} onSubmit={onSubmit}>
         <Form>
           <Input className="my-4" label="Имя пользователя" name="username" />
