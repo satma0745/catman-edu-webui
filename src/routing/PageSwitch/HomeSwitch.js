@@ -6,6 +6,7 @@ const HomeSwitch = () => {
 
   switch (role) {
     case 'Admin':
+    case 'Teacher':
       return <GroupsPage />
     case 'Student':
       return <TestingDisciplinesPage />

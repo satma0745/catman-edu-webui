@@ -8,7 +8,7 @@ const GroupsPage = () => {
 
   return (
     <>
-      <h1>Управление группами</h1>
+      <h1>Группы</h1>
       <GroupsTable className="my-4" />
 
       <div className="d-flex justify-content-center">

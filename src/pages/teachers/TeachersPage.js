@@ -8,7 +8,7 @@ const TeachersPage = () => {
 
   return (
     <>
-      <h1>Управление преподавателями</h1>
+      <h1>Преподаватели</h1>
 
       <TeachersTable className="my-4" />
 

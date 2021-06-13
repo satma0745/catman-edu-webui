@@ -8,9 +8,13 @@ const StudentsSwitch = () => {
 
   return (
     <Switch>
-      <PrivateRoute studentOnly path={`${path}/discipline/:disciplineId`} render={TestsListPage} />
-      <PrivateRoute studentOnly path={`${path}/:testId`} render={TestPage} />
-      <PrivateRoute studentOnly path={`${path}`} render={TestingDisciplinesPage} />
+      <PrivateRoute
+        allowedRoles="Student"
+        path={`${path}/discipline/:disciplineId`}
+        render={TestsListPage}
+      />
+      <PrivateRoute allowedRoles="Student" path={`${path}/:testId`} render={TestPage} />
+      <PrivateRoute allowedRoles="Student" path={`${path}`} render={TestingDisciplinesPage} />
     </Switch>
   )
 }

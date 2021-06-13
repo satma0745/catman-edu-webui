@@ -44,7 +44,7 @@ const AccessCheckWrapper = () => {
   const { studentId } = useParams()
   const [userInfo] = useAuth()
 
-  return userInfo.role === 'Admin' || userInfo.id === studentId ? (
+  return userInfo.role === 'Admin' || userInfo.role === 'Teacher' || userInfo.id === studentId ? (
     <StudentDisciplinesPage />
   ) : (
     <Redirect to="/home" />

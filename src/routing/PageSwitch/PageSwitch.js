@@ -20,14 +20,20 @@ const PageSwitch = () => (
     <PrivateRoute path="/home" render={HomeSwitch} />
     <PrivateRoute path="/testing/results" render={TestingResultsSwitch} />
 
-    <PrivateRoute adminOnly path="/admins" render={AdminsSwitch} />
-    <PrivateRoute adminOnly path="/students" render={StudentsSwitch} />
-    <PrivateRoute adminOnly path="/teachers" render={TeachersSwitch} />
-    <PrivateRoute adminOnly path="/disciplines" render={DisciplinesSwitch} />
-    <PrivateRoute adminOnly path="/groups" render={GroupsSwitch} />
-    <PrivateRoute adminOnly path="/tests" render={TestsSwitch} />
+    <PrivateRoute allowedRoles="Admin" path="/admins" render={AdminsSwitch} />
+    <PrivateRoute allowedRoles="Admin" path="/teachers" render={TeachersSwitch} />
 
-    <PrivateRoute studentOnly path="/testing" render={TestingSwitch} />
+    <PrivateRoute allowedRoles={['Admin', 'Teacher']} path="/groups" render={GroupsSwitch} />
+    <PrivateRoute allowedRoles={['Admin', 'Teacher']} path="/students" render={StudentsSwitch} />
+    <PrivateRoute
+      allowedRoles={['Admin', 'Teacher']}
+      path="/disciplines"
+      render={DisciplinesSwitch}
+    />
+
+    <PrivateRoute allowedRoles="Teacher" path="/tests" render={TestsSwitch} />
+
+    <PrivateRoute allowedRoles="Student" path="/testing" render={TestingSwitch} />
 
     <PublicRoute path="*" render={NotFoundPage} />
   </Switch>

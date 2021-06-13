@@ -20,7 +20,7 @@ const DisciplinesPage = () => {
 
   return (
     <>
-      <h1>Управление дисциплинами</h1>
+      <h1>Дисциплины</h1>
 
       <DisciplinesFilter initials={filter} onApply={setFilter} />
 

@@ -8,9 +8,9 @@ const GroupsSwitch = () => {
 
   return (
     <Switch>
-      <PrivateRoute adminOnly path={`${path}/add`} render={AddGroupPage} />
-      <PrivateRoute adminOnly path={`${path}/edit/:id`} render={EditGroupPage} />
-      <PrivateRoute adminOnly path={`${path}`} render={GroupsPage} />
+      <PrivateRoute allowedRoles="Admin" path={`${path}/add`} render={AddGroupPage} />
+      <PrivateRoute allowedRoles="Admin" path={`${path}/edit/:id`} render={EditGroupPage} />
+      <PrivateRoute allowedRoles={['Admin', 'Teacher']} path={`${path}`} render={GroupsPage} />
     </Switch>
   )
 }
