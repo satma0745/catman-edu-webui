@@ -7,6 +7,8 @@ import { password, username, fullName } from 'validation/user'
 
 import { Loadable } from 'components/common'
 
+import { TaughtDisciplines } from '../shared'
+
 const schema = object().shape({
   username: username().required('Укажите имя пользователя'),
   password: password().required('Укажите пароль пользователя'),
@@ -22,6 +24,8 @@ const EditTeacherForm = ({ isLoading, initialValues, onCancel: cancel, onSubmit,
           <Input className="my-4" label="Имя пользователя" name="username" />
           <PasswordInput className="my-4" label="Пароль пользователя" name="password" />
           <Input className="my-4" label="ФИО преподавателя" name="fullName" />
+
+          <TaughtDisciplines />
 
           <div className="d-flex justify-content-between mt-5">
             <Button onClick={() => cancel()} variant="outline-primary">

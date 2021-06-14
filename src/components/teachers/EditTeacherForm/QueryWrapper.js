@@ -1,15 +1,23 @@
 import { useHistory } from 'react-router-dom'
-import { useSingleQuery, useSaveMutation } from 'api/teachers'
+import {
+  useSingleQuery as useTeacherQuery,
+  useTaughtDisciplinesQuery,
+  useSaveMutation,
+} from 'api/teachers'
 
 import EditTeacherForm from './Presentation'
 
 const QueryWrapper = ({ id }) => {
   const history = useHistory()
 
-  const { isLoading, teacher: existingTeacher } = useSingleQuery(id, {
+  const { isLoading: teacherLoading, teacher: existingTeacher } = useTeacherQuery(id, {
     onNotFoundError: () => history.push('/notfound'),
   })
-  const initialValues = () => ({ ...existingTeacher, password: '' })
+
+  const { isLoading: disciplinesLoading, disciplines } = useTaughtDisciplinesQuery(id, {
+    onNotFoundError: () => history.push('/notfound'),
+  })
+  const initialValues = () => ({ ...existingTeacher, password: '', disciplines })
 
   const { save } = useSaveMutation(id, { onSuccess: () => history.push('/teachers') })
   const onSubmit = (teacher, { setErrors }) => {
@@ -23,7 +31,7 @@ const QueryWrapper = ({ id }) => {
 
   return (
     <EditTeacherForm
-      isLoading={isLoading}
+      isLoading={teacherLoading || disciplinesLoading}
       initialValues={initialValues()}
       onCancel={cancel}
       onSubmit={onSubmit}

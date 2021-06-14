@@ -12,7 +12,16 @@ const useRegisterMutation = ({ onSuccess }) => {
   })
 
   const register = (teacher, { onValidationError }) => {
-    mutate(teacher, {
+    const registerRequest = {
+      username: teacher.username,
+      fullName: teacher.fullName,
+      password: teacher.password,
+      taughtDisciplines: teacher.disciplines
+        .filter((discipline) => discipline.isTaught)
+        .map((discipline) => discipline.id),
+    }
+
+    mutate(registerRequest, {
       onError: ({ validation }) => {
         if (validation) {
           onValidationError(validation)
