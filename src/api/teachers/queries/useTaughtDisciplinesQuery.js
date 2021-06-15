@@ -14,8 +14,11 @@ const compose = (disciplines, taughtDisciplinesIds) =>
     isTaught: taughtDisciplinesIds.includes(discipline.id),
   }))
 
-const useSingleQuery = (teacherId, { onNotFoundError }) => {
-  const { isLoading: disciplinesLoading, disciplines } = useDisciplinesQuery()
+const useTaughtDisciplinesQuery = (
+  teacherId,
+  { onNotFoundError, filter } = { onNotFoundError: () => {}, filter: {} }
+) => {
+  const { isLoading: disciplinesLoading, disciplines } = useDisciplinesQuery(filter)
 
   const { isLoading: taughtDisciplinesLoading, data: taughtDisciplinesIds } = useQuery(
     ['teachers.disciplines', teacherId],
@@ -35,4 +38,4 @@ const useSingleQuery = (teacherId, { onNotFoundError }) => {
   return { isLoading, disciplines: composed }
 }
 
-export default useSingleQuery
+export default useTaughtDisciplinesQuery

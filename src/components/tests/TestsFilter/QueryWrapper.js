@@ -1,19 +1,22 @@
-import { useFilteredQuery as useDisciplinesQuery } from 'api/disciplines'
+import { useAuth } from 'auth'
+import { useTaughtDisciplinesQuery } from 'api/teachers'
+
 import TestsFilter from './Presentation'
 
 const QueryWrapper = ({ initials, onApply, ...props }) => {
-  const { isLoading, disciplines } = useDisciplinesQuery()
+  const [userInfo] = useAuth()
+  const { isLoading, disciplines } = useTaughtDisciplinesQuery(userInfo.id)
 
   const selectableDisciplines = () =>
-    disciplines?.reduce(
-      (selectables, { id, title, grade }) => ({
-        ...selectables,
-        [id]: `${title} (${grade}й год обучения)`,
-      }),
-      {
-        any: 'Все дисциплины',
-      }
-    )
+    disciplines
+      ?.filter((discipline) => discipline.isTaught)
+      ?.reduce(
+        (selectables, { id, title, grade }) => ({
+          ...selectables,
+          [id]: `${title} (${grade}й год обучения)`,
+        }),
+        { any: 'Все дисциплины' }
+      )
 
   return (
     <TestsFilter

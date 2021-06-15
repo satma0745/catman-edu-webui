@@ -1,7 +1,9 @@
 import axios from 'axios'
 
-const getPaginatedCall = async ({ page, pageSize }, { disciplineId, title }) => {
-  const response = await axios.get('/tests', { params: { page, pageSize, disciplineId, title } })
+const getPaginatedCall = async ({ page, pageSize }, { disciplineId, title, teacherId }) => {
+  const response = await axios.get('/tests', {
+    params: { page, pageSize, disciplineId, title, teacherId },
+  })
   const { resource } = response.data
 
   const tests = resource.items

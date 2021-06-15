@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
+
+import { useAuth } from 'auth'
 import { usePaginatedQuery, useDeleteMutation } from 'api/tests'
 
 import TestsTable from './Presentation'
 
 const QueryWrapper = ({ filter, ...props }) => {
   const history = useHistory()
+  const [userInfo] = useAuth()
 
   const [pageNumber, setPageNumber] = useState(1)
   const [pagesCount, setPagesCount] = useState(1)
@@ -15,7 +18,7 @@ const QueryWrapper = ({ filter, ...props }) => {
       page: pageNumber,
       pageSize: 50,
     },
-    filter
+    { ...filter, teacherId: userInfo.id }
   )
 
   const { $delete } = useDeleteMutation()
