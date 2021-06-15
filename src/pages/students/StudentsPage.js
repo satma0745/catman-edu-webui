@@ -1,4 +1,5 @@
 import { useHistory } from 'react-router-dom'
+import { useAuth } from 'auth'
 import { useSearch } from 'routing/utils'
 
 import Button from 'react-bootstrap/Button'
@@ -6,6 +7,7 @@ import { StudentsFilter, StudentsTable } from 'components/students'
 
 const StudentsPage = () => {
   const history = useHistory()
+  const [userInfo] = useAuth()
   const [filter, setFilter] = useSearch()
 
   const onRegisterClick = () => {
@@ -26,9 +28,11 @@ const StudentsPage = () => {
 
       <StudentsTable className="my-4" filter={filter} />
 
-      <div className="d-flex justify-content-center">
-        <Button onClick={onRegisterClick}>Зарегистрировать нового учащегося</Button>
-      </div>
+      {userInfo.role === 'Admin' && (
+        <div className="d-flex justify-content-center">
+          <Button onClick={onRegisterClick}>Зарегистрировать нового учащегося</Button>
+        </div>
+      )}
     </>
   )
 }
