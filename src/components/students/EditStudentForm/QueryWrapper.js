@@ -11,21 +11,26 @@ const QueryWrapper = ({ id }) => {
   })
   const initialValues = () => ({ ...existingStudent, password: '' })
 
-  const { save } = useSaveMutation(id, { onSuccess: () => history.push('/students') })
+  const { save } = useSaveMutation(id, {
+    onSuccess: () => {
+      history.push(`/students?groupId=${existingStudent?.groupId}`)
+    },
+  })
+
   const onSubmit = (student, { setErrors }) => {
     const patchedStudent = { ...existingStudent, ...student }
     save(patchedStudent, { onValidationError: setErrors })
   }
 
-  const cancel = () => {
-    history.push('/students')
+  const onCancel = () => {
+    history.push(`/students?groupId=${existingStudent?.groupId}`)
   }
 
   return (
     <EditStudentForm
       isLoading={isLoading}
       initialValues={initialValues()}
-      onCancel={cancel}
+      onCancel={onCancel}
       onSubmit={onSubmit}
     />
   )

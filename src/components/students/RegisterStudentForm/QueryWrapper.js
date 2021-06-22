@@ -9,9 +9,25 @@ const QueryWrapper = ({ defaultGroupId }) => {
   const history = useHistory()
 
   const { isLoading, groups } = useGroupsQuery()
-  const { register } = useRegisterMutation({ onSuccess: () => history.push('/students') })
+  const { register } = useRegisterMutation({
+    onSuccess: () => {
+      if (defaultGroupId) {
+        history.push(`/students?groupId=${defaultGroupId}`)
+      } else {
+        history.push('/students')
+      }
+    },
+  })
 
   const groupsList = () => groups?.reduce((list, { id, title }) => ({ ...list, [id]: title }), {})
+
+  const onCancel = () => {
+    if (defaultGroupId) {
+      history.push(`/students?groupId=${defaultGroupId}`)
+    } else {
+      history.push('/students')
+    }
+  }
 
   const onSubmit = (student, { setErrors }) => {
     register(student, { onValidationError: setErrors })
@@ -22,7 +38,7 @@ const QueryWrapper = ({ defaultGroupId }) => {
       isLoading={isLoading}
       groups={groupsList()}
       defaultGroupId={defaultGroupId}
-      onCancel={() => history.push('/students')}
+      onCancel={onCancel}
       onSubmit={onSubmit}
     />
   )
