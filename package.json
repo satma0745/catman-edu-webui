@@ -1,6 +1,6 @@
 {
   "name": "catman-edu-webui",
-  "version": "0.3.29",
+  "version": "0.3.30",
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
@@ -17,8 +17,9 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "env-cmd -f .env react-scripts build"
+    "start": "env-cmd -f ./env/.dev.env react-scripts start",
+    "build:dev": "env-cmd -f ./env/.dev.env react-scripts build",
+    "build:prod": "env-cmd -f ./env/.prod.env react-scripts build"
   },
   "eslintConfig": {
     "extends": [

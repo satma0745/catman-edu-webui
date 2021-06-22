@@ -1,6 +1,8 @@
 .vscode
 
 /node_modules
-.env
 
 /build
+
+/env/.dev.env
+/env/.prod.env
