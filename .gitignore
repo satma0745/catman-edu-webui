@@ -6,3 +6,5 @@
 
 /env/.dev.env
 /env/.prod.env
+
+/deploy.sh
