@@ -21,7 +21,7 @@ const EditDisciplineForm = ({ initialValues, onCancel: cancel, onSubmit, ...prop
 
         <div className="d-flex justify-content-between mt-5">
           <Button onClick={() => cancel()} variant="outline-primary">
-            Отменить
+            Вернуться к списку дисциплин
           </Button>
           <Button type="submit">Сохранить изменения</Button>
         </div>

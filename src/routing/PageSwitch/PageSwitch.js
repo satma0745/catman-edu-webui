@@ -10,7 +10,6 @@ import StudentsSwitch from './StudentsSwitch'
 import TeachersSwitch from './TeachersSwitch'
 import TestingSwitch from './TestingSwitch'
 import TestingResultsSwitch from './TestingResultsSwitch'
-import TestsSwitch from './TestsSwitch'
 import HomeSwitch from './HomeSwitch'
 
 const PageSwitch = () => (
@@ -25,13 +24,12 @@ const PageSwitch = () => (
 
     <PrivateRoute allowedRoles={['Admin', 'Teacher']} path="/groups" render={GroupsSwitch} />
     <PrivateRoute allowedRoles={['Admin', 'Teacher']} path="/students" render={StudentsSwitch} />
+
     <PrivateRoute
       allowedRoles={['Admin', 'Teacher']}
       path="/disciplines"
       render={DisciplinesSwitch}
     />
-
-    <PrivateRoute allowedRoles="Teacher" path="/tests" render={TestsSwitch} />
 
     <PrivateRoute allowedRoles="Student" path="/testing" render={TestingSwitch} />
 

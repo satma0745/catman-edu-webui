@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import { Test } from 'components/tests'
 
 const TestPage = () => {
-  const { id } = useParams()
+  const { id, disciplineId } = useParams()
   const history = useHistory()
 
   return (
@@ -12,7 +12,10 @@ const TestPage = () => {
       <Test id={id} />
 
       <div>
-        <Button variant="outline-primary" onClick={() => history.push('/tests')}>
+        <Button
+          variant="outline-primary"
+          onClick={() => history.push(`/disciplines/${disciplineId}/tests`)}
+        >
           Назад
         </Button>
       </div>

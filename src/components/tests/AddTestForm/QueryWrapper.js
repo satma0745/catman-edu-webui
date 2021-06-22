@@ -5,8 +5,12 @@ import { useHistory } from 'react-router-dom'
 
 import AddTestForm from './Presentation'
 
-const QueryWrapper = ({ defaults, ...props }) => {
+const QueryWrapper = ({ disciplineId, defaults, ...props }) => {
   const history = useHistory()
+
+  const redirectToDisciplines = () => {
+    history.push(`/disciplines/${disciplineId}/tests`)
+  }
 
   const { isLoading, disciplines: rawDisciplines } = useDisciplinesQuery()
   const disciplines = () =>
@@ -20,7 +24,7 @@ const QueryWrapper = ({ defaults, ...props }) => {
       }
     )
 
-  const { add } = useAddMutation({ onSuccess: () => history.push('/tests') })
+  const { add } = useAddMutation({ onSuccess: redirectToDisciplines })
   const onAdd = (test, { setError }) => {
     add(test, { onValidationError: setError })
   }
@@ -31,7 +35,7 @@ const QueryWrapper = ({ defaults, ...props }) => {
       isLoading={isLoading}
       defaults={defaults}
       disciplines={disciplines()}
-      onCancel={() => history.push('/tests')}
+      onCancel={redirectToDisciplines}
       onSubmit={onAdd}
     />
   )

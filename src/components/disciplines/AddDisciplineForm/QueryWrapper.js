@@ -5,17 +5,26 @@ import Presentation from './Presentation'
 
 const QueryWrapper = ({ defaultGrade }) => {
   const history = useHistory()
+  const redirectToDisciplines = () => {
+    if (defaultGrade) {
+      history.push(`/disciplines?grade=${defaultGrade}`)
+    } else {
+      history.push('/disciplines')
+    }
+  }
 
-  const { add } = useAddMutation({ onSuccess: () => history.push('/disciplines') })
+  const { add } = useAddMutation({ onSuccess: redirectToDisciplines })
   const onSubmit = (discipline, { setErrors }) => {
     add(discipline, { onValidationError: setErrors })
   }
 
-  const cancel = () => {
-    history.push('/disciplines')
-  }
-
-  return <Presentation defaultGrade={defaultGrade} onCancel={cancel} onSubmit={onSubmit} />
+  return (
+    <Presentation
+      defaultGrade={defaultGrade}
+      onCancel={redirectToDisciplines}
+      onSubmit={onSubmit}
+    />
+  )
 }
 
 export default QueryWrapper

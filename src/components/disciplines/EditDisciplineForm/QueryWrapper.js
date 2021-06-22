@@ -4,25 +4,34 @@ import { useSingleQuery, useSaveMutation } from 'api/disciplines'
 import { Loadable } from 'components/common'
 import Presentation from './Presentation'
 
-const QueryWrapper = ({ id }) => {
+const QueryWrapper = ({ id, filterGrade, ...props }) => {
   const history = useHistory()
+
+  const redirectToDisciplines = () => {
+    if (filterGrade) {
+      history.push(`/disciplines?grade=${filterGrade}`)
+    } else {
+      history.push('/disciplines')
+    }
+  }
 
   const { isLoading, discipline: existingDiscipline } = useSingleQuery(id, {
     onNotFoundError: () => history.push('/notfound'),
   })
 
-  const { save } = useSaveMutation(id, { onSuccess: () => history.push('/disciplines') })
+  const { save } = useSaveMutation(id, { onSuccess: redirectToDisciplines })
   const onSubmit = (discipline, { setErrors }) => {
     save(discipline, { onValidationError: setErrors })
   }
 
-  const cancel = () => {
-    history.push('/disciplines')
-  }
-
   return (
     <Loadable loaded={!isLoading}>
-      <Presentation initialValues={existingDiscipline} onCancel={cancel} onSubmit={onSubmit} />
+      <Presentation
+        {...props}
+        initialValues={existingDiscipline}
+        onCancel={redirectToDisciplines}
+        onSubmit={onSubmit}
+      />
     </Loadable>
   )
 }

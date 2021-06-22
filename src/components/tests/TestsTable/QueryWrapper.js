@@ -6,7 +6,7 @@ import { usePaginatedQuery, useDeleteMutation } from 'api/tests'
 
 import TestsTable from './Presentation'
 
-const QueryWrapper = ({ filter, ...props }) => {
+const QueryWrapper = ({ filter, disciplineId, ...props }) => {
   const history = useHistory()
   const [userInfo] = useAuth()
 
@@ -18,7 +18,7 @@ const QueryWrapper = ({ filter, ...props }) => {
       page: pageNumber,
       pageSize: 50,
     },
-    { ...filter, teacherId: userInfo.id }
+    { ...filter, disciplineId, teacherId: userInfo.id }
   )
 
   const { $delete } = useDeleteMutation()
@@ -35,7 +35,7 @@ const QueryWrapper = ({ filter, ...props }) => {
       pageNumber={pageNumber}
       pagesCount={pagesCount}
       onPageChange={setPageNumber}
-      onDetails={(id) => history.push(`/tests/${id}`)}
+      onDetails={(id) => history.push(`/disciplines/${disciplineId}/tests/${id}`)}
       onDelete={$delete}
     />
   )

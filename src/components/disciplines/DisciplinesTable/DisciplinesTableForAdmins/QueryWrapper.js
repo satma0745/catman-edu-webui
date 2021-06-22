@@ -9,12 +9,20 @@ const QueryWrapper = ({ filter, ...props }) => {
   const { $delete } = useDeleteMutation()
   const { isLoading, disciplines } = useFilteredQuery(filter)
 
+  const onEdit = (id) => {
+    if (filter?.grade) {
+      history.push(`/disciplines/${id}/edit?filterGrade=${filter?.grade}`)
+    } else {
+      history.push(`/disciplines/${id}/edit`)
+    }
+  }
+
   return (
     <Presentation
       {...props}
       isLoading={isLoading}
       disciplines={disciplines}
-      onEdit={(id) => history.push(`/disciplines/edit/${id}`)}
+      onEdit={onEdit}
       onDelete={$delete}
     />
   )
