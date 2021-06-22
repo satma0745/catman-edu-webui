@@ -3,7 +3,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 import { PageSwitch } from 'routing'
-import Header from './layout/Header'
+import { Header, Footer } from './layout'
 
 const App = () => (
   <div className="app bg-light h-100 d-flex flex-column">
@@ -16,6 +16,8 @@ const App = () => (
         </Col>
       </Row>
     </Container>
+
+    <Footer />
   </div>
 )
 
