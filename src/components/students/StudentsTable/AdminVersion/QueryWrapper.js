@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { usePaginatedQuery, useDeleteMutation } from 'api/students'
 
 import { Loadable } from 'components/common'
-import Presentation from './Presentation'
+import StudentsTable from './Presentation'
 
 const QueryWrapper = ({ filter, ...props }) => {
   const history = useHistory()
@@ -30,7 +30,7 @@ const QueryWrapper = ({ filter, ...props }) => {
 
   return (
     <Loadable loaded={!isLoading}>
-      <Presentation
+      <StudentsTable
         {...props}
         students={students}
         pageNumber={pageNumber}

@@ -3,15 +3,13 @@ import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 import { Pagination } from 'components/common'
 
-const Presentation = ({
+const StudentsTable = ({
   className,
   students,
   pageNumber,
   pagesCount,
   onPageChange,
   onTestingResults: testingResults,
-  onEdit: edit,
-  onDelete: $delete,
   ...props
 }) => (
   <div className={className}>
@@ -33,12 +31,6 @@ const Presentation = ({
                 <Button variant="outline-secondary" onClick={() => testingResults(id)}>
                   Успеваемость
                 </Button>
-                <Button variant="outline-primary" onClick={() => edit(id)}>
-                  Изменить
-                </Button>
-                <Button variant="outline-danger" onClick={() => $delete(id)}>
-                  Удалить
-                </Button>
               </Form>
             </td>
           </tr>
@@ -56,4 +48,4 @@ const Presentation = ({
   </div>
 )
 
-export default Presentation
+export default StudentsTable

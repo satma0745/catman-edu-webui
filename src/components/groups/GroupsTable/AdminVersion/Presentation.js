@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 
-const Presentation = ({
+const GroupsTable = ({
   className,
   groups,
   onStudents: students,
@@ -42,4 +42,4 @@ const Presentation = ({
   </Table>
 )
 
-export default Presentation
+export default GroupsTable

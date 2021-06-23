@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom'
 import { useAllQuery, useDeleteMutation } from 'api/groups'
 
 import { Loadable } from 'components/common'
-import Presentation from './Presentation'
+import GroupsTable from './Presentation'
 
 const QueryWrapper = (props) => {
   const history = useHistory()
@@ -12,7 +12,7 @@ const QueryWrapper = (props) => {
 
   return (
     <Loadable loaded={!isLoading}>
-      <Presentation
+      <GroupsTable
         {...props}
         groups={groups}
         onStudents={(groupId) => history.push(`/students?groupId=${groupId}`)}

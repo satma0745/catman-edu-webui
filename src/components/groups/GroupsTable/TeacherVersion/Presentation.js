@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Table from 'react-bootstrap/Table'
 
-const Presentation = ({ className, groups, onStudents: students, ...props }) => (
+const GroupsTable = ({ className, groups, onStudents: students, ...props }) => (
   <Table {...props} className={`mb-0 ${className}`} striped bordered hover>
     <thead>
       <tr>
@@ -29,4 +29,4 @@ const Presentation = ({ className, groups, onStudents: students, ...props }) => 
   </Table>
 )
 
-export default Presentation
+export default GroupsTable
