@@ -11,7 +11,7 @@ const HomeSwitch = () => {
     case 'Student':
       return <TestingDisciplinesPage />
     default:
-      throw new Error(`Unknown role ${role}`)
+      throw new Error(`"${role}" users should not have access to this component`)
   }
 }
 

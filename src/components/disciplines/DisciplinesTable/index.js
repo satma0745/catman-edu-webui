@@ -12,7 +12,7 @@ const RoleBasedSwitch = (props) => {
     case 'Teacher':
       return <DisciplinesTableForTeachers {...props} />
     default:
-      throw new Error('Unknown role')
+      throw new Error(`"${userInfo.role}" users should not have access to this component`)
   }
 }
 

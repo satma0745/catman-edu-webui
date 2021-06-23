@@ -17,7 +17,7 @@ const NavigationLinks = () => {
     case 'Teacher':
       return <TeacherVersion />
     default:
-      throw new Error('Unknown role')
+      throw new Error(`"${userInfo.role}" users should not have access to this component`)
   }
 }
 
