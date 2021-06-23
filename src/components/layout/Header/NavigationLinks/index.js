@@ -7,7 +7,7 @@ import TeacherVersion from './TeacherVersion'
 const NavigationLinks = () => {
   const [userInfo] = useAuth()
 
-  if (!userInfo) return <div />
+  if (!userInfo) return <div className="mr-auto" />
 
   switch (userInfo.role) {
     case 'Admin':
