@@ -9,7 +9,6 @@ const QueryWrapper = ({ id }) => {
   const { isLoading, student: existingStudent } = useSingleQuery(id, {
     onNotFoundError: () => history.push('/notfound'),
   })
-  const initialValues = () => ({ ...existingStudent, password: '' })
 
   const { save } = useSaveMutation(id, {
     onSuccess: () => {
@@ -29,7 +28,7 @@ const QueryWrapper = ({ id }) => {
   return (
     <EditStudentForm
       isLoading={isLoading}
-      initialValues={initialValues()}
+      initialValues={existingStudent}
       onCancel={onCancel}
       onSubmit={onSubmit}
     />

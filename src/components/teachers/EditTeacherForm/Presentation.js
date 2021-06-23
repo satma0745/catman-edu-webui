@@ -1,9 +1,9 @@
 import { Formik, Form } from 'formik'
 import Button from 'react-bootstrap/Button'
-import { Input, PasswordInput } from 'components/common/controls/formik'
+import { Input } from 'components/common/controls/formik'
 
 import { object } from 'yup'
-import { password, username, fullName } from 'validation/user'
+import { username, fullName } from 'validation/user'
 
 import { Loadable } from 'components/common'
 
@@ -11,7 +11,6 @@ import { TaughtDisciplines } from '../shared'
 
 const schema = object().shape({
   username: username().required('Укажите имя пользователя'),
-  password: password().required('Укажите пароль пользователя'),
   fullName: fullName().required('Укажите ФИО преподавателя'),
 })
 
@@ -22,7 +21,6 @@ const EditTeacherForm = ({ isLoading, initialValues, onCancel: cancel, onSubmit,
       <Formik initialValues={initialValues} validationSchema={schema} onSubmit={onSubmit}>
         <Form>
           <Input className="my-4" label="Имя пользователя" name="username" />
-          <PasswordInput className="my-4" label="Пароль пользователя" name="password" />
           <Input className="my-4" label="ФИО преподавателя" name="fullName" />
 
           <TaughtDisciplines />

@@ -9,7 +9,6 @@ const QueryWrapper = ({ id }) => {
   const { isLoading, admin: existingAdmin } = useSingleQuery(id, {
     onNotFoundError: () => history.push('/notfound'),
   })
-  const initialValues = () => ({ ...existingAdmin, password: '' })
 
   const { save } = useSaveMutation(id, { onSuccess: () => history.push('/admins') })
   const onSubmit = (admin, { setErrors }) => {
@@ -24,7 +23,7 @@ const QueryWrapper = ({ id }) => {
   return (
     <EditAdminForm
       isLoading={isLoading}
-      initialValues={initialValues()}
+      initialValues={existingAdmin}
       onCancel={cancel}
       onSubmit={onSubmit}
     />

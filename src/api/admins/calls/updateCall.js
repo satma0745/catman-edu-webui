@@ -15,8 +15,8 @@ const updateCall = async (id, admin) => {
     }
 
     if (error.response?.data?.validationErrors) {
-      const { Username, Password } = error.response?.data?.validationErrors
-      throw new ValidationError({ username: Username, password: Password })
+      const { Username } = error.response?.data?.validationErrors
+      throw new ValidationError({ username: Username })
     }
 
     throw error

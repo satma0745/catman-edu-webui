@@ -13,7 +13,6 @@ const useSaveMutation = (id, { onSuccess, onNotFoundError }) => {
       const updateTeacherRequest = {
         username: teacher.username,
         fullName: teacher.fullName,
-        password: teacher.password,
         taughtDisciplines,
       }
 

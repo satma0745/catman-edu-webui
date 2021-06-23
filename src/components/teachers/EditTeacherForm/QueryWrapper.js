@@ -17,7 +17,7 @@ const QueryWrapper = ({ id }) => {
   const { isLoading: disciplinesLoading, disciplines } = useTaughtDisciplinesQuery(id, {
     onNotFoundError: () => history.push('/notfound'),
   })
-  const initialValues = () => ({ ...existingTeacher, password: '', disciplines })
+  const initialValues = () => ({ ...existingTeacher, disciplines })
 
   const { save } = useSaveMutation(id, { onSuccess: () => history.push('/teachers') })
   const onSubmit = (teacher, { setErrors }) => {
