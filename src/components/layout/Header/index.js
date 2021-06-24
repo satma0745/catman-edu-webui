@@ -6,14 +6,17 @@ import SessionControls from './SessionControls'
 import NavigationLinks from './NavigationLinks'
 
 const Header = () => (
-  <Navbar sticky="top" className="shadow-sm border-bottom" bg="light">
+  <Navbar className="shadow-sm border-bottom" bg="light" sticky="top" expand="lg">
     <Navbar.Brand as={Link} to="/home">
       Catman.Education
     </Navbar.Brand>
 
-    <NavigationLinks />
+    <Navbar.Toggle />
 
-    <SessionControls />
+    <Navbar.Collapse>
+      <NavigationLinks className="my-3 my-lg-0" />
+      <SessionControls />
+    </Navbar.Collapse>
   </Navbar>
 )
 
