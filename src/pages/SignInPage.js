@@ -1,12 +1,12 @@
 import { useHistory } from 'react-router-dom'
 
+import { useSignInMutation } from 'api/auth'
+import { useAuth } from 'auth'
+
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
-import { SignInForm } from 'components/auth'
-
-import { useSignInMutation } from 'api/auth'
-import { useAuth } from 'auth'
+import { DemoCredentials, SignInForm } from 'components/auth'
 
 const SignInPage = () => {
   const [_, setUserInfo] = useAuth()
@@ -30,6 +30,10 @@ const SignInPage = () => {
           <Col md="6">
             <Jumbotron className="py-4">
               <SignInForm onSubmit={onSubmit} />
+            </Jumbotron>
+
+            <Jumbotron className="py-4">
+              <DemoCredentials />
             </Jumbotron>
           </Col>
         </Row>

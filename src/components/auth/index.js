@@ -1,3 +1,4 @@
+import DemoCredentials from './DemoCredentials'
 import SignInForm from './SignInForm'
 
-export { SignInForm }
+export { DemoCredentials, SignInForm }
