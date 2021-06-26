@@ -6,7 +6,7 @@ const queryWrapper = ({ queryKey }) => {
   return getSingleResultCall(testId, studentId)
 }
 
-const useSingleResultQuery = ({ testId, studentId }, { onNotFoundError }) => {
+const useSingleResultQuery = ({ testId, studentId }, { onNotFoundError, ...options }) => {
   const { isSuccess, isLoading, data: result } = useQuery(
     ['testing-results', { testId, studentId }],
     queryWrapper,
@@ -16,6 +16,7 @@ const useSingleResultQuery = ({ testId, studentId }, { onNotFoundError }) => {
           onNotFoundError()
         }
       },
+      ...options,
     }
   )
 

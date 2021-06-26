@@ -1,36 +1,24 @@
-import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import { usePaginatedQuery as useTestsQuery } from 'api/tests'
+import { useAuth } from 'auth'
+
+import { useTestsInfoQuery } from 'api/testing'
 
 import TestsList from './Presentation'
 
 const QueryWrapper = ({ disciplineId, ...props }) => {
   const history = useHistory()
+  const [userInfo] = useAuth()
 
-  const [pageNumber, setPageNumber] = useState(1)
-  const [pagesCount, setPagesCount] = useState(1)
-
-  const { isLoading, tests, paginationInfo } = useTestsQuery(
-    {
-      page: pageNumber,
-      pageSize: 50,
-    },
-    { disciplineId }
-  )
-
-  useEffect(() => {
-    if (paginationInfo) setPagesCount(paginationInfo.pagesCount)
-  }, [paginationInfo, setPagesCount])
+  const { isLoading, testsInfo } = useTestsInfoQuery(disciplineId, userInfo.id, {
+    onNotFoundError: () => history.push('/notfound'),
+  })
 
   return (
     <TestsList
       {...props}
       isLoading={isLoading}
-      tests={tests}
+      testsInfo={testsInfo}
       onSelect={(testId) => history.push(`/testing/${testId}`)}
-      pageNumber={pageNumber}
-      pagesCount={pagesCount}
-      onPageChange={setPageNumber}
     />
   )
 }

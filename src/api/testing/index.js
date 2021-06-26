@@ -4,6 +4,7 @@ import {
   useSingleResultQuery,
   useStudentPerformanceQuery,
   useTestQuery,
+  useTestsInfoQuery,
 } from './queries'
 
 export {
@@ -12,4 +13,5 @@ export {
   useSingleResultQuery,
   useStudentPerformanceQuery,
   useTestQuery,
+  useTestsInfoQuery,
 }
