@@ -28,7 +28,7 @@ const Discipline = ({
 
         <div className="d-flex justify-content-end">
           <Button variant="outline-primary" size="sm" onClick={onSelect}>
-            Результаты тестирования
+            Подробнее
           </Button>
         </div>
       </Card.Body>

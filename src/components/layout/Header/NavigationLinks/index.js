@@ -13,7 +13,7 @@ const NavigationLinks = ({ className, ...props }) => {
     case 'Admin':
       return <AdminVersion {...props} className={className} />
     case 'Student':
-      return <StudentVersion {...props} className={className} student={userInfo} />
+      return <StudentVersion {...props} className={className} />
     case 'Teacher':
       return <TeacherVersion {...props} className={className} />
     default:

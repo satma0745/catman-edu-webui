@@ -27,8 +27,6 @@ const student = {
 const isDemo =
   process.env.REACT_APP_IS_DEMO && (admin.presented || teacher.presented || student.presented)
 
-console.log({ admin, teacher, student, isDemo })
-
 const EnvironmentWrapper = (props) =>
   isDemo ? <DemoCredentials {...props} admin={admin} teacher={teacher} student={student} /> : <></>
 

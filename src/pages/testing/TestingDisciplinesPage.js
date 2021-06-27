@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom'
 import { useAuth } from 'auth'
 
-import { DisciplinesList } from 'components/testing'
+import { DisciplinesList } from 'components/testing-results'
 
 const TestingDisciplinesPage = () => {
   const history = useHistory()
@@ -9,7 +9,8 @@ const TestingDisciplinesPage = () => {
 
   return (
     <>
-      <h1>Тестирование - Выбор дисциплины</h1>
+      <h1>Выбор дисциплины для тестирования</h1>
+
       <DisciplinesList
         className="my-4"
         studentId={userInfo.id}
