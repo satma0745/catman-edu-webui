@@ -1,13 +1,14 @@
 import AuthContext, { AuthProvider } from './AuthContext'
-import { getUserInfo, setUserInfo, subscribeToUserInfo, loadUserInfo } from './session'
+import { getUserInfo, signInAsync, signOut, subscribeToUserInfo, loadSessionAsync } from './session'
 import useAuth from './useAuth'
 
 export {
   AuthContext,
   AuthProvider,
   getUserInfo,
-  setUserInfo,
+  signInAsync,
+  signOut,
   subscribeToUserInfo,
-  loadUserInfo,
+  loadSessionAsync,
   useAuth,
 }

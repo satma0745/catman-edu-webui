@@ -9,12 +9,12 @@ import Row from 'react-bootstrap/Row'
 import { DemoCredentials, SignInForm } from 'components/auth'
 
 const SignInPage = () => {
-  const [_, setUserInfo] = useAuth()
+  const [_, signInAsync] = useAuth()
   const history = useHistory()
 
   const { signIn } = useSignInMutation({
-    onSuccess: (userInfo) => {
-      setUserInfo(userInfo)
+    onSuccess: async ({ token }) => {
+      await signInAsync(token)
       history.push('/home')
     },
   })

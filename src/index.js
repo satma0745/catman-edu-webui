@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { configureAxios } from 'api'
 
-import { AuthProvider, loadUserInfo } from 'auth'
+import { AuthProvider } from 'auth'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
@@ -14,17 +14,16 @@ import './index.css'
 import App from 'components/App'
 
 configureAxios()
-loadUserInfo()
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <QueryClientProvider client={new QueryClient()}>
-        <AuthProvider>
+    <AuthProvider>
+      <BrowserRouter>
+        <QueryClientProvider client={new QueryClient()}>
           <App />
-        </AuthProvider>
-      </QueryClientProvider>
-    </BrowserRouter>
+        </QueryClientProvider>
+      </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

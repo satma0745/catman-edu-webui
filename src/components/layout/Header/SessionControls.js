@@ -24,16 +24,16 @@ const UnsignedControls = () => (
 )
 
 const SessionControls = () => {
-  const [userInfo, setUserInfo] = useAuth()
+  const [userInfo, _, signOut] = useAuth()
   const history = useHistory()
 
-  const signOut = () => {
-    setUserInfo(undefined)
+  const onSignOut = () => {
+    signOut()
     history.push('/')
   }
 
   return userInfo ? (
-    <SignedControls username={userInfo.fullName} signOut={signOut} />
+    <SignedControls username={userInfo.fullName} signOut={onSignOut} />
   ) : (
     <UnsignedControls />
   )

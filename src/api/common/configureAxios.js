@@ -1,6 +1,5 @@
 import axios from 'axios'
-
-import { setUserInfo } from 'auth'
+import { signOut } from 'auth'
 
 const configureAxios = () => {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL
@@ -10,7 +9,7 @@ const configureAxios = () => {
     (response) => response,
     (error) => {
       if (error?.response?.status === 401) {
-        setUserInfo(undefined)
+        signOut()
       }
       return Promise.reject(error)
     }
