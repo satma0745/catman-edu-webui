@@ -12,8 +12,8 @@ const registerCall = async ({ username, password, fullName, groupId }) => {
     await axios.post('/students', student, { headers: { Authorization: auth } })
   } catch (error) {
     if (error.response?.data?.validationErrors) {
-      const { Title, Grade } = error.response?.data?.validationErrors
-      throw new ValidationError({ title: Title, grade: Grade })
+      const { Username, Title, Grade } = error.response?.data?.validationErrors
+      throw new ValidationError({ username: Username, title: Title, grade: Grade })
     }
 
     if (error.response?.status === 404) {
