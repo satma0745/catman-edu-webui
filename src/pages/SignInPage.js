@@ -31,7 +31,9 @@ const SignInPage = () => {
             <Jumbotron className="py-4">
               <SignInForm onSubmit={onSubmit} />
             </Jumbotron>
+          </Col>
 
+          <Col md="8">
             <Jumbotron className="py-4">
               <DemoCredentials />
             </Jumbotron>

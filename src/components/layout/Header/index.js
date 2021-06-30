@@ -5,10 +5,13 @@ import Navbar from 'react-bootstrap/Navbar'
 import SessionControls from './SessionControls'
 import NavigationLinks from './NavigationLinks'
 
+const getTitle = () =>
+  process.env.REACT_APP_IS_DEMO ? 'Catman.Education.Demo' : 'Catman.Education'
+
 const Header = () => (
   <Navbar className="shadow-sm border-bottom" bg="light" sticky="top" expand="lg">
     <Navbar.Brand as={Link} to="/home">
-      Catman.Education
+      {getTitle()}
     </Navbar.Brand>
 
     <Navbar.Toggle />

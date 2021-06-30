@@ -1,38 +1,39 @@
+import Table from 'react-bootstrap/Table'
+
 const DemoCredentials = ({ admin, teacher, student, ...props }) => (
   <div {...props}>
-    <p>Вы используете демонстрационную версию приложения</p>
+    <p>
+      В <b>демо</b>-версии вам доступны следующие пебличные аккаунты для ознакомления с функциями
+      приложения:
+    </p>
 
-    <div>
-      <p className="mb-0">
-        В демонстрационной версии приложения пользователю предоставляются публичные аккаунты для
-        ознакомления с функцианалом приложения.
-      </p>
-      <p className="mb-0">
-        Данные аккаунты общедоступны и совершённые с их помощью операции могут быть отменены
-        администраторами.
-      </p>
-      <p>Не афишируйте свои личные данные используя публичные аккаунты.</p>
-    </div>
+    <Table responsive="xl">
+      <thead>
+        <tr>
+          <th>Роль</th>
+          <th>Логин</th>
+          <th>Пароль</th>
+        </tr>
+      </thead>
 
-    <div>
-      {admin.username && admin.password && (
-        <p className="mb-0">
-          Администратор: {admin.username}, {admin.password}
-        </p>
-      )}
-
-      {teacher.username && teacher.password && (
-        <p className="mb-0">
-          Преподаватель: {teacher.username}, {teacher.password}
-        </p>
-      )}
-
-      {student.username && student.password && (
-        <p className="mb-0">
-          Учащийся: {student.username}, {student.password}
-        </p>
-      )}
-    </div>
+      <tbody>
+        <tr>
+          <td>Учащийся</td>
+          <td>{student.username}</td>
+          <td>{student.password}</td>
+        </tr>
+        <tr>
+          <td>Преподаватель</td>
+          <td>{teacher.username}</td>
+          <td>{teacher.password}</td>
+        </tr>
+        <tr>
+          <td>Администратор</td>
+          <td>{admin.username}</td>
+          <td>{admin.password}</td>
+        </tr>
+      </tbody>
+    </Table>
   </div>
 )
 
